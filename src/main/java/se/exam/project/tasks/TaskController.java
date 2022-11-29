@@ -15,9 +15,13 @@ public class TaskController {
     public List<Tasks> overview() {
         return (List<Tasks>) taskRepository.findAll();
     }
-
-    @GetMapping("/overviewById")
-    public List<Tasks> overviewById(Long id) {
-        return (List<Tasks>) taskRepository.findByAssignedTo(id);
+    @GetMapping("/overview2")
+    public Tasks overview2() {
+        return taskRepository.findById(1).get();
     }
+
+//    @GetMapping("/overviewById")
+//    public List<Tasks> overviewById(Long id) {
+//        return (List<Tasks>) taskRepository.findByAssignedTo(id);
+//    }
 }

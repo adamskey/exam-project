@@ -10,13 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'newticket', component: NewticketComponent
-  },  
+  },
   {
-    path: 'oversiktsvy', component: OversiktsvyComponent
+    path: 'overview', component: OversiktsvyComponent
   },
   {
     path: '', pathMatch: 'full', component: LoginComponent
-  },
+  }
 ];
 
 @NgModule({

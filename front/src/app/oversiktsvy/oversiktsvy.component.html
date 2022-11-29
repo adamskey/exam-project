@@ -1,1 +1,7 @@
 <p>oversiktsvy works!</p>
+<div>
+    <div class="shipping-item" *ngFor="let tasks of taskList | async">
+        <span>{{ tasks.id }}</span>
+        <span>{{ tasks.title }}</span>
+      </div>
+</div>
