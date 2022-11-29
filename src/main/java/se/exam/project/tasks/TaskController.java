@@ -18,6 +18,6 @@ public class TaskController {
 
     @GetMapping("/overviewById")
     public List<Tasks> overviewById(Long id) {
-        return (List<Tasks>) taskRepository.findByUserId(id);
+        return (List<Tasks>) taskRepository.findByAssignedTo(id);
     }
 }
