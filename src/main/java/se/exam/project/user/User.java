@@ -1,7 +1,6 @@
-package se.exam.project;
+package se.exam.project.user;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "[User]")
