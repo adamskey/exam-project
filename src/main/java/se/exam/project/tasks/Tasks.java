@@ -1,12 +1,10 @@
 package se.exam.project.tasks;
 
+
+
 import jakarta.persistence.*;
-import se.exam.project.priority.Priority;
-import se.exam.project.taskCategory.TaskCategory;
-import se.exam.project.user.User;
 
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Tasks")
@@ -16,7 +14,7 @@ public class Tasks {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "TaskCategory")
+    @Column(name = "TaskCategoryId")
     private Integer taskCategory;
 
     @Column(name = "CreatedTimestamp")
@@ -37,18 +35,18 @@ public class Tasks {
     @Column(name = "Description")
     private String description;
 
-    @Column(name = "AssignedTo")
-    private Integer assignedTo;
+    @Column(name="[assigned_to]")
+    private Integer AssignedTo;
 
     @Column(name = "PriorityId")
     private Integer priorityId;
 
-    @ManyToOne(targetEntity= Priority.class)
-    private List priorityList;
-    @ManyToOne(targetEntity = User.class )
-    private List userList;
-    @ManyToOne(targetEntity = TaskCategory.class)
-    private List taskCategoryList;
+//    @ManyToOne(targetEntity= Priority.class)
+//    private List priorityList;
+//    @ManyToOne(targetEntity = User.class )
+//    private List userList;
+//    @ManyToOne(targetEntity = TaskCategory.class)
+//    private List taskCategoryList;
 
 
     public Tasks() {
@@ -62,7 +60,7 @@ public class Tasks {
         this.completed = completed;
         this.title = title;
         this.description = description;
-        this.assignedTo = assignedTo;
+        this.AssignedTo = assignedTo;
         this.priorityId = priorityId;
     }
 
@@ -131,11 +129,11 @@ public class Tasks {
     }
 
     public Integer getAssignedTo() {
-        return assignedTo;
+        return AssignedTo;
     }
 
     public void setAssignedTo(Integer assignedTo) {
-        this.assignedTo = assignedTo;
+        this.AssignedTo = assignedTo;
     }
 
     public Integer getPriorityId() {
@@ -157,7 +155,7 @@ public class Tasks {
                 ", completed=" + completed +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", assignedTo=" + assignedTo +
+                ", assignedTo=" + AssignedTo +
                 ", priorityId=" + priorityId +
                 '}';
     }
