@@ -2,7 +2,9 @@ package se.exam.project.team;
 
 import jakarta.persistence.*;
 import se.exam.project.taskCategory.TaskCategory;
+import se.exam.project.user.User;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,6 +20,9 @@ public class Team {
 
     @ManyToMany(targetEntity = TaskCategory.class)
     private Set taskCategorySet;
+    @OneToMany(targetEntity = User.class)
+    private List userList;
+
 
     public Team() {
     }

@@ -1,8 +1,12 @@
 package se.exam.project.tasks;
 
 import jakarta.persistence.*;
+import se.exam.project.priority.Priority;
+import se.exam.project.taskCategory.TaskCategory;
+import se.exam.project.user.User;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Tasks")
@@ -38,6 +42,14 @@ public class Tasks {
 
     @Column(name = "PriorityId")
     private Integer priorityId;
+
+    @ManyToOne(targetEntity= Priority.class)
+    private List priorityList;
+    @ManyToOne(targetEntity = User.class )
+    private List userList;
+    @ManyToOne(targetEntity = TaskCategory.class)
+    private List taskCategoryList;
+
 
     public Tasks() {
     }
