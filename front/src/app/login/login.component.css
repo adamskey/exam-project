@@ -18,7 +18,17 @@ body {
   margin: auto;
   padding-top: 8%;
 }
-
+.card{
+background-color: #FBEDDD;
+}
+.button-color{
+background-color: #F57D3B;
+}
+.logo{
+margin-left: 0px;
+margin-center: -18px;
+float: center;
+}
 .form-signin .checkbox {
   font-weight: 400;
 }
@@ -38,3 +48,4 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
