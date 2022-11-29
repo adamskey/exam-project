@@ -1,6 +1,6 @@
 package se.exam.project.team;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import se.exam.project.taskCategory.TaskCategory;
 import se.exam.project.user.User;
 
