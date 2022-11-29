@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
 import { NewticketComponent } from './newticket/newticket.component';
 import { StatsComponent } from './stats/stats.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatsComponent } from './stats/stats.component';
     SidebarComponent,
     LoginComponent,
     NewticketComponent,
-    StatsComponent
+    StatsComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
