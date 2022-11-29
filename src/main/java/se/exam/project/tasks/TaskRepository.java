@@ -1,4 +1,4 @@
-package se.exam.project;
+package se.exam.project.tasks;
 
 import org.springframework.data.repository.CrudRepository;
 
