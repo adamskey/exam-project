@@ -1,6 +1,9 @@
 package se.exam.project.roles;
 
 import jakarta.persistence.*;
+import se.exam.project.user.User;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Roles")
@@ -12,6 +15,9 @@ public class Roles {
 
     @Column(name = "[Name]")
     private String name;
+
+    @OneToMany(targetEntity = User.class)
+    private List userList;
 
     public Roles() {
     }

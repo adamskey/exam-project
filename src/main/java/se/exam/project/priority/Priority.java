@@ -1,6 +1,9 @@
 package se.exam.project.priority;
 
 import jakarta.persistence.*;
+import se.exam.project.tasks.Tasks;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Priority")
@@ -12,6 +15,9 @@ public class Priority {
 
     @Column(name = "PriorityName")
     private String priorityName;
+
+    @OneToMany(targetEntity = Tasks.class)
+    private List taskList;
 
     public Priority() {
     }
