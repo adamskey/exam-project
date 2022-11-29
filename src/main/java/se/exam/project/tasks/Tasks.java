@@ -35,7 +35,7 @@ public class Tasks {
     @Column(name = "Description")
     private String description;
 
-    @Column(name="[assigned_to]")
+    @Column(name="[AssignedTo]")
     private Integer AssignedTo;
 
     @Column(name = "PriorityId")
