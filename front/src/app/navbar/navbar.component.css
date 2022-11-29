@@ -5,13 +5,13 @@
   background-color: #FBEDDD;
   position: fixed;
   top: 0;
-  height: 60px;
+  height: 70px;
   width: 100%;
   z-index: 1000;
 }
 .logo{
-margin-left: 100px;
-margin-top: -22px;
+margin-left: 0px;
+margin-top: -18px;
 float: left;
 }
 .search{
