@@ -21,3 +21,5 @@ describe('SidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+/* global bootstrap: false */
+
