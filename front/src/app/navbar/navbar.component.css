@@ -1,0 +1,21 @@
+
+
+.header {
+  overflow: hidden;
+  background-color: #FBEDDD;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 1000;
+}
+.logo{
+margin-left: 100px;
+margin-top: -22px;
+float: left;
+}
+.search{
+margin-top: 15px;
+float: right;
+}
+
