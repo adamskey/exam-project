@@ -10,14 +10,21 @@ class ProjectApplicationTests {
 
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	TaskRepository taskRepository;
 	@Test
 	void contextLoads() {
 	}
 
 	@Test
-	void testDb() {
+	void testUser() {
 		Long count = userRepository.count();
 		Assertions.assertEquals(5, count);
+	}
+	@Test
+	void testTasks() {
+		Long count = taskRepository.count();
+		Assertions.assertEquals(1000, count);
 	}
 
 }
