@@ -16,8 +16,8 @@ public class TaskCategory {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "[Name]")
-    private String name;
+    @Column(name = "CategoryType")
+    private String categoryType;
 
     @ManyToMany(targetEntity = Team.class)
     private Set teamSet;
@@ -26,8 +26,8 @@ public class TaskCategory {
     public TaskCategory() {
     }
 
-    public TaskCategory(String name) {
-        this.name = name;
+    public TaskCategory(String categoryType) {
+        this.categoryType = categoryType;
     }
 
     public Integer getId() {
@@ -38,11 +38,11 @@ public class TaskCategory {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCategoryType() {
+        return categoryType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryType(String categoryType) {
+        this.categoryType = categoryType;
     }
 }

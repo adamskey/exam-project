@@ -39,18 +39,18 @@ public class User {
     @Column(name = "TeamId")
     private Integer teamId;
 
-    @ManyToOne(targetEntity = Roles.class)
-    private List roleList;
-    @OneToMany(targetEntity = Tasks.class)
-    private List taskList;
-    @ManyToOne(targetEntity = Team.class)
-    private List teamList;
-
-    @ManyToOne(targetEntity = User.class)
-    private List employeeList;
-
-    @OneToMany(targetEntity =User.class)
-    private List managerList;
+//    @ManyToOne(targetEntity = Roles.class)
+//    private List roleList;
+//    @OneToMany(targetEntity = Tasks.class)
+//    private List taskList;
+//    @ManyToOne(targetEntity = Team.class)
+//    private List teamList;
+//
+//    @ManyToOne(targetEntity = User.class)
+//    private List employeeList;
+//
+//    @OneToMany(targetEntity =User.class)
+//    private List managerList;
 
     public User() {
     }

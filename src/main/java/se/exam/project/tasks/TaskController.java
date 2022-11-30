@@ -3,7 +3,9 @@ package se.exam.project.tasks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import se.exam.project.user.User;
 
 import java.util.List;
 
@@ -18,8 +20,10 @@ public class TaskController {
         return (List<Tasks>) taskRepository.findAll();
     }
     @GetMapping("/overview2")
-    public Tasks overview2() {
-        return taskRepository.findById(1).get();
+    public List<Tasks> overview2(@RequestParam Integer id) {
+        User user = new User();
+        user.setId(id);
+        return taskRepository.findByAssignedTo(user);
     }
 
 //    @GetMapping("/overviewById")

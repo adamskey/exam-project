@@ -3,8 +3,13 @@ package se.exam.project.tasks;
 
 
 import jakarta.persistence.*;
+import org.springframework.scheduling.config.Task;
+import se.exam.project.priority.Priority;
+import se.exam.project.taskCategory.TaskCategory;
+import se.exam.project.user.User;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Tasks")
@@ -14,8 +19,9 @@ public class Tasks {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "TaskCategoryId")
-    private Integer taskCategory;
+    @JoinColumn(name = "TaskCategoryId")
+    @ManyToOne(targetEntity = TaskCategory.class)
+    private TaskCategory taskCategory;
 
     @Column(name = "CreatedTimestamp")
     private Date createdTimestamp;
@@ -35,24 +41,19 @@ public class Tasks {
     @Column(name = "Description")
     private String description;
 
-    @Column(name="[AssignedTo]")
-    private Integer AssignedTo;
+    @JoinColumn(name="AssignedTo")
+    @ManyToOne(targetEntity = User.class)
+    private User assignedTo;
 
-    @Column(name = "PriorityId")
-    private Integer priorityId;
-
-//    @ManyToOne(targetEntity= Priority.class)
-//    private List priorityList;
-//    @ManyToOne(targetEntity = User.class )
-//    private List userList;
-//    @ManyToOne(targetEntity = TaskCategory.class)
-//    private List taskCategoryList;
+    @JoinColumn(name = "PriorityId")
+    @ManyToOne(targetEntity = Priority.class)
+    private Priority priorityId;
 
 
     public Tasks() {
     }
 
-    public Tasks(Integer taskCategory, Date createdTimestamp, Date due, Date edited, Date completed, String title, String description, Integer assignedTo, Integer priorityId) {
+    public Tasks(TaskCategory taskCategory, Date createdTimestamp, Date due, Date edited, Date completed, String title, String description, User assignedTo, Priority priorityId) {
         this.taskCategory = taskCategory;
         this.createdTimestamp = createdTimestamp;
         this.due = due;
@@ -60,7 +61,7 @@ public class Tasks {
         this.completed = completed;
         this.title = title;
         this.description = description;
-        this.AssignedTo = assignedTo;
+        this.assignedTo = assignedTo;
         this.priorityId = priorityId;
     }
 
@@ -72,11 +73,11 @@ public class Tasks {
         this.id = id;
     }
 
-    public Integer getTaskCategory() {
+    public TaskCategory getTaskCategory() {
         return taskCategory;
     }
 
-    public void setTaskCategory(Integer taskCategory) {
+    public void setTaskCategory(TaskCategory taskCategory) {
         this.taskCategory = taskCategory;
     }
 
@@ -128,19 +129,19 @@ public class Tasks {
         this.description = description;
     }
 
-    public Integer getAssignedTo() {
-        return AssignedTo;
+    public User getAssignedTo() {
+        return assignedTo;
     }
 
-    public void setAssignedTo(Integer assignedTo) {
-        this.AssignedTo = assignedTo;
+    public void setAssignedTo(User assignedTo) {
+        this.assignedTo = assignedTo;
     }
 
-    public Integer getPriorityId() {
+    public Priority getPriorityId() {
         return priorityId;
     }
 
-    public void setPriorityId(Integer priorityId) {
+    public void setPriorityId(Priority priorityId) {
         this.priorityId = priorityId;
     }
 
@@ -155,7 +156,7 @@ public class Tasks {
                 ", completed=" + completed +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", assignedTo=" + AssignedTo +
+                ", assignedTo=" + assignedTo +
                 ", priorityId=" + priorityId +
                 '}';
     }
