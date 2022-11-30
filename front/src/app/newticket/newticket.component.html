@@ -1,1 +1,49 @@
-<p>newticket works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+<main>
+  <form method="post" action="">
+    <fieldset>
+      <legend>New task</legend>
+
+
+      Category<br>
+      <select>
+        <option> New loan </option>
+        <option> Extend loan </option>
+        <option> Pay off </option>
+        <option> Pay interest </option>
+      </select>
+
+      <label for="title">Title</label>
+      <br>
+      <input type="text" id="title">
+
+      <label for="description">Description </label>
+      <textarea id="description"></textarea>
+
+      <label for="enddate">End date</label>
+      <br>
+      <input type="date" id="enddate" required>
+      <br>
+      <label for="assignto">Assign to</label>
+      <br>
+      <input type="text" id="assignto" required>
+      <br>
+      <input type="submit" name="submit" id="submit" value="Submit" />
+    </fieldset>
+  </form>
+</main>
+</body>
+
+</html>
+
