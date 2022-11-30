@@ -57,7 +57,7 @@ __________________________
 
 ~~- Mot databasen 
 
-Adam, Onsdag
+Adam,EMil, Emmelie Onsdag
 - fungerande loginsida + stateless applikation, fungernade utloggning ANGULAR
 
 Bestämma vilken data som ska hämtas beroende på user role, 
