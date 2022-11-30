@@ -1,8 +1,15 @@
-<p>oversiktsvy works!</p>
 <div>
-    <!--<button (click)="giveMeData()">GET DATA</button>-->
-    <div class="shipping-item" *ngFor="let tasks of var1">
-        <span>{{ tasks.id }}</span>
-        <span>{{ tasks.title }}</span>
-      </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+        </tr>
+
+        <tr *ngFor="let tasks of var1">
+
+            <td><span>{{ tasks.id }}</span></td>
+            <td><span>{{ tasks.title }}</span></td>
+
+        </tr>
+    </table>
 </div>
