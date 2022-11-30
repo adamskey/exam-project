@@ -1,18 +1,21 @@
 
 table {
-
-  width: 200%;
+  border-radius: 12px;
+  padding:5px;
+  width:100%;
   border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.8);
 }
 th,
 td {
-  padding: 15px;
-  background-color: rgba(50, 41, 41, 0.2);
-  color: rgb(255, 255, 255);
+  border-bottom: dashed 1px;
+  padding: 20px;
+  background-color: rgba(157, 74, 74, 0.2);
+  color: rgb(0, 0, 0);
 }
 th {
+  
   text-align: left;
 }
 thead th {
