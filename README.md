@@ -7,11 +7,11 @@ SPRINT 1
 
 __________________________ 
 
-1. Databas ink innehåll 
+~~1. Databas ink innehåll ~~
 
-	- Designa databasen i Lucidchart 
+~~- Designa databasen i Lucidchart ~~
 
-		- Tabeller 
+~~- Tabeller 
 
 		- göra kopplingar 
 
@@ -35,85 +35,82 @@ __________________________
 
 	- Angular 
 
-  
+  */
 
 3. Design (Felix, Malin) TISDAG 
 
-	- Bestämma design för hela projektet (Bootstrap) 
+~~- Bestämma design för hela projektet (Bootstrap) *
 
-		- Grundsida 
+~~- Login sida 
 
-		- Login sida 
+- Startsida 
 
-		- Startsida 
+- Detaljsida 
 
-		- Detaljsida 
+- Nytt ärende sida 
 
-		- Nytt ärende sida 
-
-	- Installera Angular i projektet 
+~~- Installera Angular i projektet *
 
   
 
-4. Backend restcontrollers (Emil, Emmelie) TISDAG 
+~~4. Backend restcontrollers (Emil, Emmelie) TISDAG 
 
-	- Mot databasen 
+~~- Mot databasen 
 
-	 
+Adam,EMil, Emmelie Onsdag
+- fungerande loginsida + stateless applikation, fungernade utloggning ANGULAR
 
-4. Detaljvyn – komponent (Adam) TISDAG 
+Bestämma vilken data som ska hämtas beroende på user role, 
 
-	- Formulär med dessa fält: 
+	
+~~4. Detaljvyn – komponent (Adam) TISDAG 
 
-		- Task ID (låst) 
 
-		- Title (låst?) 
+- Formulär med dessa fält: 
 
-		- Creation date (låst) 
+- Task ID (låst) 
 
-		- End date (ändringsbar) 
+- Title (låst?) 
 
-		- Priority (ändringsbar) 
+- Creation date (låst) 
 
-		- Creator (låst) 
+- End date (ändringsbar) 
 
-		- Assign to (rulllista? teamet) 
+- Priority (ändringsbar) 
 
-		- Description (låst) 
+- Creator (låst) 
 
-		- Comment (ändringsbar) 
+- Assign to (rulllista? teamet) 
 
-		- On hold (button) 
+- Description (låst) 
 
-		.- Commit (button) 
+- Comment (ändringsbar) 
 
-	- Design 
+- On hold (button) 
 
-  
+- Commit (button) 
 
-5. Översiktsvy - komponent (Adam) TISDAG 
-
-	- Skapa en tabell med  
-
-	- Design 
+~~- Design 
 
   
 
-6. NAV-bar – komponent (Adam) TISDAG 
+~~5. Översiktsvy - komponent (Adam) TISDAG 
 
-	- Skapa logoutknapp 
+- Skapa HTML i Översiktsvy
 
-Sökruta 
+~~- Design 
 
-Statistik knapp 
+  
 
-Nytt ärende knapp	 
+~~6. NAV-bar – komponent (Adam) TISDAG 
+ 
+Fungerande sökfunktion 
 
-	- (Skapa profilknapp) 
+- (Skapa profilknapp) 
 
-	- Logga upp till vänster 
+~~- Logga upp till vänster 
 
-7. Sidebar komponent (Adam)  
+~~7. Sidebar komponent (Adam)  
 
 - Statistik 
 
@@ -123,31 +120,25 @@ Nytt ärende knapp
 
   
 
-8. Login – komponent (Adam) TISDAG 
+~~8. Login – komponent (Adam) TISDAG 
 
-	- Användarnamn 
-
-	- Lösenord 
-
-	- Loginknapp 
-
-	- Errortext när man skriver fel format eller felaktig information 
+- Errortext när man skriver fel format eller felaktig information 
 
   
 
-9. Nytt ärende - komponent  
+9. Nytt ärende 
 
-	- Formuläret från detaljvyn  
+- Formuläret från detaljvyn  
 
-	- Task Id (sätts automatiskt) 
+- Task Id (sätts automatiskt) 
 
-	- Creator (sätts automatiskt) 
+- Creator (sätts automatiskt) 
 
-	- Creation date (sätts automatiskt) 
+- Creation date (sätts automatiskt) 
 
   
 
-10. Statistikvyn - komponent 
+~~10. Statistikvyn - komponent 
 
   
 
