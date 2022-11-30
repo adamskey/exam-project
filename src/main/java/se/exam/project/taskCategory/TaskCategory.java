@@ -19,8 +19,9 @@ public class TaskCategory {
     @Column(name = "CategoryType")
     private String categoryType;
 
-    @ManyToMany(targetEntity = Team.class)
-    private Set teamSet;
+    @ManyToMany
+    Set <Team> teamTask;
+
     @OneToMany(targetEntity = Tasks.class)
     private List TaskList;
     public TaskCategory() {

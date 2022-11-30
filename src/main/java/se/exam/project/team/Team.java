@@ -18,8 +18,8 @@ public class Team {
     @Column(name = "[Name]")
     private String name;
 
-    @ManyToMany(targetEntity = TaskCategory.class)
-    private Set taskCategorySet;
+    @ManyToMany
+    Set <TaskCategory> teamTask;
     @OneToMany(targetEntity = User.class)
     private List userList;
 
