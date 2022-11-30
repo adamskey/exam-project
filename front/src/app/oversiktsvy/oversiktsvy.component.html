@@ -1,6 +1,7 @@
 <p>oversiktsvy works!</p>
 <div>
-    <div class="shipping-item" *ngFor="let tasks of taskList | async">
+    <!--<button (click)="giveMeData()">GET DATA</button>-->
+    <div class="shipping-item" *ngFor="let tasks of var1">
         <span>{{ tasks.id }}</span>
         <span>{{ tasks.title }}</span>
       </div>

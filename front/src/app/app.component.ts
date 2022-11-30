@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front';
+  var1: any;
+  constructor(public http: HttpClient){}
+  
+  
+
+  giveMeData() {
+    this.http.get('localhost:8080/overview').subscribe((resp) => {
+      this.var1 = resp;
+    })
+  }
+
 }

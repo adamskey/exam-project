@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { TaskListService } from '../tasklist.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-oversiktsvy',
@@ -11,17 +12,34 @@ import { TaskListService } from '../tasklist.service';
 })
 
 @Injectable()
-export class OversiktsvyComponent implements OnInit{
+export class OversiktsvyComponent implements OnInit {
 
-  taskList!: Observable<{ id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
-  completed: Date, title:string, description: string, assignedTo: number, priorityId: number }[]>;
-  constructor(private taskListService: TaskListService){
+
+  constructor(private taskListService: TaskListService,
+    private app: AppComponent) {
 
   }
+  var1: any;
+
+  taskList!: Observable<{
+    id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
+    completed: Date, title: string, description: string, assignedTo: number, priorityId: number
+  }[]>;
 
   ngOnInit(): void {
-   this.taskList = this.taskListService.getTaskList();
+    //this.taskList = this.taskListService.getTaskList();
+    //this.taskList = this.app.giveMeData();
+    this.taskListService.getTaskList().subscribe((response) => {
+      this.var1 = response;
+
+    }
+
+
+    )
+    console.log(this.var1)
+
   }
+
 
 
 }
