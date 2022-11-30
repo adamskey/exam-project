@@ -21,8 +21,9 @@ public class User {
     @Column(name = "Password")
     private String password;
 
-    @Column(name = "Role")
-    private Integer role;
+    @JoinColumn(name = "Role")
+    @ManyToOne(targetEntity = Roles.class)
+    private Roles role;
 
     @Column(name = "CreatedDate")
     private String createdDate;
@@ -33,21 +34,16 @@ public class User {
     @Column(name = "PhoneNumber")
     private String phoneNumber;
 
-    @Column(name = "ReportsTo")
-    private Integer reportsTo;
+    @JoinColumn(name = "ReportsTo")
+    @ManyToOne(targetEntity = User.class)
+    private User reportsTo;
 
-    @Column(name = "TeamId")
-    private Integer teamId;
+    @JoinColumn(name = "TeamId")
+    @ManyToOne(targetEntity = Team.class)
+    private Team teamId;
 
-//    @ManyToOne(targetEntity = Roles.class)
-//    private List roleList;
 //    @OneToMany(targetEntity = Tasks.class)
 //    private List taskList;
-//    @ManyToOne(targetEntity = Team.class)
-//    private List teamList;
-//
-//    @ManyToOne(targetEntity = User.class)
-//    private List employeeList;
 //
 //    @OneToMany(targetEntity =User.class)
 //    private List managerList;
@@ -55,7 +51,7 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, Integer role, String createdDate, String email, String phoneNumber, Integer reportsTo, Integer teamId) {
+    public User(String username, String password, Roles role, String createdDate, String email, String phoneNumber, User reportsTo, Team teamId) {
         this.username = username;
         this.password = password;
         this.role = role;
@@ -90,11 +86,11 @@ public class User {
         this.password = password;
     }
 
-    public Integer getRole() {
+    public Roles getRole() {
         return role;
     }
 
-    public void setRole(Integer role) {
+    public void setRole(Roles role) {
         this.role = role;
     }
 
@@ -122,19 +118,19 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public Integer getReportsTo() {
+    public User getReportsTo() {
         return reportsTo;
     }
 
-    public void setReportsTo(Integer reportsTo) {
+    public void setReportsTo(User reportsTo) {
         this.reportsTo = reportsTo;
     }
 
-    public Integer getTeamId() {
+    public Team getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(Integer teamId) {
+    public void setTeamId(Team teamId) {
         this.teamId = teamId;
     }
 
