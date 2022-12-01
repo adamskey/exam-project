@@ -54,4 +54,13 @@ float: center;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.hidden{
+    visibility: hidden;
+}
+.password-error{
+    border:solid 1px;
+}
+.pid-error{
+    border:solid 1px;
+}
 
