@@ -9,7 +9,9 @@ import { isEmpty } from '../string-utilities';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  passwordError = document.body.querySelector(".password-error");
+  passwordHasError:boolean = false;
+  pidHasError:boolean = false;
+
 
   loginForm = this.formBuilder.group({
     pid: '',
@@ -23,12 +25,15 @@ export class LoginComponent {
 
   ) { }
   onSubmit(): void {
-    if (isEmpty(this.loginForm.value.password) || isEmpty(this.loginForm.value.pid))
-      console.log("STRÄNG ÄR TOM")
-      this.passwordError?.classList.remove(".hidden")
-      document.getElementById(".password-error")?.innerText == "HEJ"
+    if (isEmpty(this.loginForm.value.password)){
+      this.passwordHasError = true;
+
+  }
+  if (isEmpty(this.loginForm.value.pid)){
+    this.pidHasError = true;
   }
 
+}
 }
 
 

@@ -27,17 +27,10 @@ export class OversiktsvyComponent implements OnInit {
   }[]>;
 
   ngOnInit(): void {
-    //this.taskList = this.taskListService.getTaskList();
-    //this.taskList = this.app.giveMeData();
-    this.taskListService.getTaskList().subscribe((response) => {
+    this.taskListService.getTaskListByUserId().subscribe((response) => {
       this.var1 = response;
-
-    }
-
-
-    )
+    })
     console.log(this.var1)
-
   }
 
 
