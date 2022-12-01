@@ -11,15 +11,15 @@
                         formControlName="pid">
                 </div>
                 <div class="form-floating">
-                    <div id="pid-error" class="pid-error">
-
+                    <div *ngIf="pidHasError" class="error">
+                        Vänligen fyll i ditt P-ID.
                     </div>
                     <label for="password">Lösenord</label>
                     <input type="password" class="form-control" name="password" id="password"
                         placeholder=" ex. Handboll8" formControlName="password">
                 </div>
-                <div class="password-error" id="password-error">
-                        
+                <div *ngIf="passwordHasError" class="error">
+                        Vänligen fyll i ditt lösenord.
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="rememberme">

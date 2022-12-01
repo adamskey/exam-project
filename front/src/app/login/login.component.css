@@ -53,10 +53,8 @@ float: center;
 .hidden{
     visibility: hidden;
 }
-.password-error{
-    border:solid 1px;
+.error{
+    color: red;
 }
-.pid-error{
-    border:solid 1px;
-}
+
 
