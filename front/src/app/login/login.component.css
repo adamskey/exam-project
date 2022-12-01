@@ -16,13 +16,15 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
-  padding-top: 8%;
+
 }
 .card{
 background-color: #FBEDDD;
 }
 .button-color{
 background-color: #F57D3B;
+cursor: pointer;
+margin-top: 15px;
 }
 .logo{
 margin-left: 0px;

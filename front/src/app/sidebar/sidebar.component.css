@@ -1,8 +1,9 @@
-
+/*
 body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
     z-index: 5;
+
   }
 
   html {
@@ -17,10 +18,12 @@ body {
     max-height: 100vh;
     overflow-x: auto;
     overflow-y: hidden;
+
   }
 
   a {
   color: #F57D3B;
+
   }
 
 
@@ -35,7 +38,7 @@ body {
   }
 
   .bi {
-    vertical-align: -.125em;
+    horizontal-align: -.125em;
     pointer-events: none;
     fill: currentColor;
   }
@@ -93,4 +96,4 @@ body {
   }
 
   .fw-semibold { font-weight: 600; }
-  .lh-tight { line-height: 1.25; }
+  .lh-tight { line-height: 1.25; }*/

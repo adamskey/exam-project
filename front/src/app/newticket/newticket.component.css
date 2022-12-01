@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
-
+ background-color: rgba(128, 128, 128, 0.751);
 }
 
 article {
@@ -81,6 +81,10 @@ input[type=date] {
     font-size: 16px;
     padding: 10px 0;
 
+}
+input[type=submit]:hover{
+background-color: #F57D3B;
+cursor: pointer;
 }
 fieldset{
 margin-left: 25px;
