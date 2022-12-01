@@ -3,7 +3,7 @@
 <main class="form-signin">
     <div class="card">
         <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form name="loginform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <img class="logo" src="/assets/loggo.png" width="160">
                 <div class="form-floating">
                     <label for="pid">P-ID</label>
@@ -16,10 +16,10 @@
                     </div>
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password"
-                        placeholder=" ex. Handboll8" formControlName="password">
+                        placeholder=" ex. Handboll8" formControlName="password" ng-model="password" required>
                 </div>
                 <div *ngIf="passwordHasError" class="error">
-                    Vänligen fyll i ditt lösenord.
+                        Vänligen fyll i ditt lösenord.
             </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="rememberme">
