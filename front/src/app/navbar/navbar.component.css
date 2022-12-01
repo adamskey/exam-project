@@ -1,21 +1,41 @@
-
-
-.header {
-  overflow: hidden;
-  background-color: #FBEDDD;
-  position: fixed;
-  top: 0;
-  height: 70px;
-  width: 100%;
-  z-index: 1000;
+.header{
+width: 100%;
+background-color: rgba(128, 128, 128, 0.16);
+height:100px;
+    justify-content: center;
 }
-.logo{
-margin-left: 0px;
-margin-top: -18px;
+.header img{
 float: left;
+display: fixed;
+margin-top: -10px;
+}
+.header a{
+float: left;
+text-align: center;
+width: 10%;
+padding: 30px 0;
+transition: all 0.3s ease;
+color: white;
+font-size: 25px;
+
+}
+.header a:hover{
+background-color: white;
+}
+.active{
+background-color: #F57D3B;
 }
 .search{
-margin-top: 15px;
-float: right;
-}
+padding: 30px;
 
+}
+.fa.fa-home{
+color: #F57D3B;
+
+}
+.fa.fa-plus{
+color: #F57D3B;
+}
+.fa.fa-bar-chart{
+color: #F57D3B;
+}
