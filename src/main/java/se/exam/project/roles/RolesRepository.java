@@ -1,6 +1,9 @@
 package se.exam.project.roles;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RolesRepository extends CrudRepository<Roles, Integer> {
+import java.util.Optional;
+
+public interface RolesRepository extends JpaRepository<Roles, Integer> {
+    Optional<Roles> findByName(ERole name);
 }

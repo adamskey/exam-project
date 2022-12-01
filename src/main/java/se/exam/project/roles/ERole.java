@@ -1,4 +1,4 @@
-package se.exam.project;
+package se.exam.project.roles;
 
 public enum ERole {
     ROLE_USER,
