@@ -2,7 +2,7 @@ package se.exam.project.tasks;
 
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.springframework.scheduling.config.Task;
 import se.exam.project.priority.Priority;
 import se.exam.project.taskCategory.TaskCategory;

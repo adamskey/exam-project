@@ -1,6 +1,6 @@
 package se.exam.project.roles;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import se.exam.project.user.User;
 
 import java.util.List;

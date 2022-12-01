@@ -1,6 +1,6 @@
 package se.exam.project.priority;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import se.exam.project.tasks.Tasks;
 
 import java.util.List;
