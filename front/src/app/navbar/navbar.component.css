@@ -1,8 +1,8 @@
 .header{
 width: 100%;
-background-color: rgba(128, 128, 128, 0.16);
+background-color: white;
 height:100px;
-    justify-content: center;
+
 }
 .header img{
 float: left;
@@ -20,7 +20,7 @@ font-size: 25px;
 
 }
 .header a:hover{
-background-color: white;
+background-color: #f0f2f5;
 }
 .active{
 background-color: #F57D3B;
@@ -38,4 +38,7 @@ color: #F57D3B;
 }
 .fa.fa-bar-chart{
 color: #F57D3B;
+}
+.frame{
+margin-left: 70px;
 }
