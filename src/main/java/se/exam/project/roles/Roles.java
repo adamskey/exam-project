@@ -1,6 +1,8 @@
 package se.exam.project.roles;
 
 import javax.persistence.*;
+
+import se.exam.project.ERole;
 import se.exam.project.user.User;
 
 import java.util.List;
@@ -8,12 +10,14 @@ import java.util.List;
 @Entity
 @Table(name = "Roles")
 public class Roles {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Integer id;
-
-    @Column(name = "[Name]")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "[Name]", length = 20)
     private String name;
 
     @OneToMany(targetEntity = User.class)
