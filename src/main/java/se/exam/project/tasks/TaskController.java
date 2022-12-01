@@ -15,15 +15,17 @@ public class TaskController {
     @Autowired
     TaskRepository taskRepository;
 
+    @Autowired
+    TaskJDBCRepository taskJDBCRepository;
+
     @GetMapping("/overview")
     public List<Tasks> overview() {
         return (List<Tasks>) taskRepository.findAll();
     }
     @GetMapping("/overview2")
-    public List<Tasks> overview2(@RequestParam Integer id) {
-        User user = new User();
-        user.setId(id);
-        return taskRepository.findByAssignedTo(user);
+    public List<DisplayTask> overview2() {
+        int id = 1;
+        return taskJDBCRepository.getTasksByUserId(id);
     }
 
 //    @GetMapping("/overviewById")

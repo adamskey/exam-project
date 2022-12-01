@@ -19,16 +19,20 @@ body {
 
 }
 .card{
-background-color: #FBEDDD;
+background-color: white;
 }
 .button-color{
 background-color: #F57D3B;
 cursor: pointer;
 margin-top: 15px;
+border: none;
+border-radius: 5px;
+padding: 8px 10px;
+margin-left: 90px;
 }
 .logo{
-margin-left: 0px;
-margin-center: -18px;
+margin-left: 50px;
+margin-center: 40px;
 float: center;
 }
 .form-signin .checkbox {
@@ -52,6 +56,12 @@ float: center;
 }
 .hidden{
     visibility: hidden;
+}
+.password-error{
+    border:solid 1px;
+}
+.pid-error{
+    border:solid 1px;
 }
 .error{
     color: red;
