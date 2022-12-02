@@ -9,50 +9,49 @@
   <title>Document</title>
 </head>-->
 
-<body>
-<main>
-  <form method="post" action="">
-    <br>
 
-    <fieldset>
-      <legend>New task</legend>
+<main class="form-signin">
+  <div class="card">
 
-  <div class="fields">
-      <a class="category">Category</a>
-      <select >
-        <option> New loan </option>
-        <option> Extend loan </option>
-        <option> Pay off </option>
-        <option> Pay interest </option>
-      </select>
+    <div class="card-body">
+      <form name="loginform" method="post" action="">
+        <div class="form-floating">
+          <legend>New task</legend>
+        </div>
+        <div class="form-floating">
+          <a class="category">Category</a>
+          <select>
+            <option> New loan </option>
+            <option> Extend loan </option>
+            <option> Pay off </option>
+            <option> Pay interest </option>
+          </select>
+        </div>
+        <div class="form-floating">
+          <label for="title">Title</label>
+          <input type="text" id="title">
+        </div>
+        <div class="form-floating">
+          <label for="description">Description </label>
+          <textarea id="description"></textarea>
+        </div>
+        <div class="form-floating">
+          <label for="enddate">End date</label>
+          <input type="date" id="enddate" required>
+        </div>
 
-      <label for="title">Title</label>
-      <br>
-      <input type="text" id="title">
-      <br>
-      <label for="description">Description </label>
-      <textarea id="description"></textarea>
-      <br>
+        <div class="form-floating">
+          <label for="assignto">Assign to</label>
+          <input type="text" id="assignto" required>
+        </div>
 
-      <label for="enddate">End date</label>
-      <br>
-      <input type="date" id="enddate" required>
+        <input type="submit" name="submit" id="submit" value="Submit" class="button-color"/>
 
-      <label for="assignto">Assign to</label>
-        <br>
-
-      <input type="text" id="assignto" required>
-
-
-
-      <input type="submit" name="submit" id="submit" value="Submit" />
-      <br>
+      </form>
+    </div>
   </div>
-    </fieldset>
-  </form>
 </main>
 <!--
 </body>
 
 </html>-->
-
