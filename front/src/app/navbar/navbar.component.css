@@ -9,7 +9,7 @@ float: left;
 display: fixed;
 margin-top: -10px;
 }
-.header a{
+.frame a{
 float: left;
 text-align: center;
 width: 10%;
@@ -19,7 +19,7 @@ color: white;
 font-size: 25px;
 
 }
-.header a:hover{
+.frame a:hover{
 background-color: #f0f2f5;
 }
 .active{
@@ -39,7 +39,7 @@ color: #F57D3B;
 .frame{
 margin-left: 70px;
 }
-.button{
+.logoutButton{
 background-color: #F57D3B;
 cursor: pointer;
 margin-top: 25px;
@@ -49,5 +49,10 @@ padding: 12px 20px;
 margin-right: 100px;
 float: right;
 
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
