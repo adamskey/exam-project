@@ -18,25 +18,29 @@ body {
   padding: 15px;
   margin: auto;
 }
-.card{
-background-color: white;
+
+.card {
+  background-color: white;
 }
-.button-color{
+
+.button-color {
   width: 100%;
-  text-align:center;
-background-color: #F57D3B;
-cursor: pointer;
-margin-top: 15px;
-border: none;
-border-radius: 5px;
-padding: 8px 10px;
-margin-left: 90px;
+  text-align: center;
+  background-color: #F57D3B;
+  cursor: pointer;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-left: 90px;
 }
-.logo{
-margin-left: 50px;
-margin-center: 40px;
-float: center;
+
+.logo {
+  margin-left: 50px;
+  margin-center: 40px;
+  float: center;
 }
+
 .form-signin .checkbox {
   font-weight: 400;
 }
@@ -51,26 +55,32 @@ float: center;
   border-bottom-left-radius: 0;
 
 }
+
 .form-signin textarea[type="text"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.hidden{
-    visibility: hidden;
+
+.hidden {
+  visibility: hidden;
 }
-.password-error{
-    border:solid 1px;
+
+.password-error {
+  border: solid 1px;
 }
-.pid-error{
-    border:solid 1px;
+
+.pid-error {
+  border: solid 1px;
 }
-.error{
-    color: red;
+
+.error {
+  color: red;
 }
