@@ -30,7 +30,7 @@
           </select>
         </div>
     <div class="form-floating">
-      <div *ngIf="categoryIsEmpty" class="empty">
+      <div *ngIf="categoryIsEmpty" class="error">
         Choose a category.
       </div>
       </div>
@@ -40,14 +40,14 @@
 
       <input type="text" id="title" formControlName="title" class="form-control">
 
-      <div *ngIf="titleIsEmpty" class="empty">
+      <div *ngIf="titleIsEmpty" class="error">
         Add a title.
       </div>
       </div>
       <div class="form-floating">
       <label for="description">Description </label>
       <textarea id="description" formControlName="description" class="form-control"></textarea>
-      <div *ngIf="descriptionIsEmpty" class="empty">
+      <div *ngIf="descriptionIsEmpty" class="error">
         Add a description.
       </div>
       </div>
@@ -55,7 +55,7 @@
       <div class="form-floating">
       <label for="enddate">End date</label>
       <input type="date" id="enddate" formControlName="enddate" class="form-control">
-      <div *ngIf="enddateIsEmpty" class="empty">
+      <div *ngIf="enddateIsEmpty" class="error">
         Choose an enddate.
       </div>
         </div>
@@ -63,6 +63,9 @@
         <div class="form-floating">
           <label for="assignto">Assign to</label>
           <input class="form-control" type="text" id="assignto" required>
+        </div>
+        <div *ngIf="enddateIsEmpty" class="error">
+          Choose asignee
         </div>
 
           <input type="submit" name="submit" id="submit" value="Submit" class="button-color" />
