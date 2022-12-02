@@ -11,44 +11,62 @@
 
 <body>
 <main>
-  <form method="post" action="">
-    <br>
+  <form name="newticketForm" [formGroup]="newticketForm" (ngSubmit)="onSubmit()">
 
-    <fieldset>
       <legend>New task</legend>
 
   <div class="fields">
-      <a class="category">Category</a>
-      <select >
+
+      <label for="category">Category</label>
+      <select id="category" formControlName="category">
+        <option></option>
         <option> New loan </option>
         <option> Extend loan </option>
         <option> Pay off </option>
-        <option> Pay interest </option>
+        <option > Pay interest </option>
       </select>
+      </div>
+    <div class="form-floating">
+      <div *ngIf="categoryIsEmpty" class="empty">
+        Choose a category.
+      </div>
 
+      <div class="form-floating">
       <label for="title">Title</label>
-      <br>
-      <input type="text" id="title">
-      <br>
+
+      <input type="text" id="title" formControlName="title">
+
+      <div *ngIf="titleIsEmpty" class="empty">
+        Add a title.
+      </div>
+      </div>
+      <div class="form-floating">
       <label for="description">Description </label>
-      <textarea id="description"></textarea>
-      <br>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="descriptionIsEmpty" class="empty">
+        Add a description.
+      </div>
+      </div>
 
+      <div class="form-floating">
       <label for="enddate">End date</label>
-      <br>
-      <input type="date" id="enddate" required>
+      <input type="date" id="enddate" formControlName="enddate">
+      <div *ngIf="enddateIsEmpty" class="empty">
+        Choose an enddate.
+      </div>
+        </div>
 
+      <div class="form-floating">
       <label for="assignto">Assign to</label>
-        <br>
+      <input type="text" id="assignto" formControlName="assignto">
+      <div *ngif="assigntoIsEmpty" class="empty">
+        Add a PID.
+        </div>
+        </div>
 
-      <input type="text" id="assignto" required>
-
-
-
-      <input type="submit" name="submit" id="submit" value="Submit" />
+      <button type="submit" class="button">Submit</button>
       <br>
   </div>
-    </fieldset>
   </form>
 </main>
 <!--
