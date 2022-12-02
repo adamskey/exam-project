@@ -1,6 +1,7 @@
 package se.exam.project.roles;
 
 import javax.persistence.*;
+
 import se.exam.project.user.User;
 
 import java.util.List;
@@ -8,21 +9,20 @@ import java.util.List;
 @Entity
 @Table(name = "Roles")
 public class Roles {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Integer id;
-
-    @Column(name = "[Name]")
-    private String name;
-
-    @OneToMany(targetEntity = User.class)
-    private List userList;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "[Name]", length = 20)
+    private ERole name;
 
     public Roles() {
     }
 
-    public Roles(String name) {
+    public Roles(ERole name) {
         this.name = name;
     }
 
@@ -34,11 +34,11 @@ public class Roles {
         this.id = id;
     }
 
-    public String getName() {
+    public ERole getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(ERole name) {
         this.name = name;
     }
 }

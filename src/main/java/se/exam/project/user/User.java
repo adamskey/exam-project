@@ -1,29 +1,41 @@
 package se.exam.project.user;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 import se.exam.project.roles.Roles;
 import se.exam.project.tasks.Tasks;
 import se.exam.project.team.Team;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "[User]")
+@Table(name = "[User]",
+        uniqueConstraints = {
+        @UniqueConstraint(columnNames = "Username"),
+        @UniqueConstraint(columnNames = "Email")
+        })
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
 
+    @NotBlank
     @Column(name = "Username")
     private String username;
 
+    @NotBlank
     @Column(name = "Password")
     private String password;
 
-    @JoinColumn(name = "Role")
-    @ManyToOne(targetEntity = Roles.class)
-    private Roles role;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "UserRoles",
+                joinColumns = @JoinColumn(name = "UserID"),
+                inverseJoinColumns = @JoinColumn(name = "RoleID"))
+    private Set<Roles> role = new HashSet<>();
 
     @Column(name = "CreatedDate")
     private String createdDate;
@@ -42,24 +54,37 @@ public class User {
     @ManyToOne(targetEntity = Team.class)
     private Team teamId;
 
-//    @OneToMany(targetEntity = Tasks.class)
-//    private List taskList;
-//
-//    @OneToMany(targetEntity =User.class)
-//    private List managerList;
-
     public User() {
     }
 
-    public User(String username, String password, Roles role, String createdDate, String email, String phoneNumber, User reportsTo, Team teamId) {
+    public User(String username, String password, String createdDate, String email, String phoneNumber, User reportsTo, Team teamId) {
         this.username = username;
         this.password = password;
-        this.role = role;
         this.createdDate = createdDate;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.reportsTo = reportsTo;
         this.teamId = teamId;
+    }
+
+    public User(String username, String password, Set<Roles> role, String email) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.email = email;
+    }
+
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
+    public User(String username, String password, String createdDate, String email) {
+        this.username = username;
+        this.password = password;
+        this.createdDate = createdDate;
+        this.email = email;
     }
 
     public Integer getId() {
@@ -86,11 +111,11 @@ public class User {
         this.password = password;
     }
 
-    public Roles getRole() {
+    public Set<Roles> getRole() {
         return role;
     }
 
-    public void setRole(Roles role) {
+    public void setRole(Set<Roles> role) {
         this.role = role;
     }
 
