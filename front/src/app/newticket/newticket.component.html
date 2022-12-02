@@ -9,7 +9,7 @@
   <title>Document</title>
 </head>-->
 
-
+<body>
 <main class="form-signin">
   <div class="card">
 
@@ -19,8 +19,8 @@
           <legend>New task</legend>
         </div>
         <div class="form-floating">
-          <a class="category">Category</a>
-          <select>
+          <label for="dropdown" class="category">Category</label>
+          <select type ="dropdown "class="form-control">
             <option> New loan </option>
             <option> Extend loan </option>
             <option> Pay off </option>
@@ -29,20 +29,20 @@
         </div>
         <div class="form-floating">
           <label for="title">Title</label>
-          <input type="text" id="title">
+          <input type="text" id="title" class="form-control">
         </div>
         <div class="form-floating">
           <label for="description">Description </label>
-          <textarea id="description"></textarea>
+          <textarea class="form-control" type="text" id="description"></textarea>
         </div>
         <div class="form-floating">
           <label for="enddate">End date</label>
-          <input type="date" id="enddate" required>
+          <input class="form-control" type="date" id="enddate" required>
         </div>
 
         <div class="form-floating">
           <label for="assignto">Assign to</label>
-          <input type="text" id="assignto" required>
+          <input class="form-control" type="text" id="assignto" required>
         </div>
 
         <input type="submit" name="submit" id="submit" value="Submit" class="button-color"/>
@@ -51,6 +51,7 @@
     </div>
   </div>
 </main>
+</body>
 <!--
 </body>
 
