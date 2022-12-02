@@ -12,44 +12,65 @@
 <body>
 <main class="form-signin">
   <div class="card">
-
-    <div class="card-body">
-      <form name="loginform" method="post" action="">
-        <div class="form-floating">
-          <legend>New task</legend>
-        </div>
-        <div class="form-floating">
-          <label for="dropdown" class="category">Category</label>
-          <select type ="dropdown "class="form-control">
-            <option> New loan </option>
-            <option> Extend loan </option>
-            <option> Pay off </option>
-            <option> Pay interest </option>
-          </select>
-        </div>
-        <div class="form-floating">
-          <label for="title">Title</label>
-          <input type="text" id="title" class="form-control">
-        </div>
-        <div class="form-floating">
-          <label for="description">Description </label>
-          <textarea class="form-control" type="text" id="description"></textarea>
-        </div>
-        <div class="form-floating">
-          <label for="enddate">End date</label>
-          <input class="form-control" type="date" id="enddate" required>
-        </div>
+  <form name="newticketForm" [formGroup]="newticketForm" (ngSubmit)="onSubmit()">
 
         <div class="form-floating">
-          <label for="assignto">Assign to</label>
-          <input class="form-control" type="text" id="assignto" required>
+
+      <legend>New task</legend>
+
+
+      <label for="category">Category</label>
+      <select id="category" formControlName="category">
+        <option></option>
+        <option> New loan </option>
+        <option> Extend loan </option>
+        <option> Pay off </option>
+        <option > Pay interest </option>
+      </select>
+      </div>
+    <div class="form-floating">
+      <div *ngIf="categoryIsEmpty" class="empty">
+        Choose a category.
+      </div>
+
+      <div class="form-floating">
+      <label for="title">Title</label>
+
+      <input type="text" id="title" formControlName="title">
+
+      <div *ngIf="titleIsEmpty" class="empty">
+        Add a title.
+      </div>
+      </div>
+      <div class="form-floating">
+      <label for="description">Description </label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="descriptionIsEmpty" class="empty">
+        Add a description.
+      </div>
+      </div>
+
+      <div class="form-floating">
+      <label for="enddate">End date</label>
+      <input type="date" id="enddate" formControlName="enddate">
+      <div *ngIf="enddateIsEmpty" class="empty">
+        Choose an enddate.
+      </div>
         </div>
 
-        <input type="submit" name="submit" id="submit" value="Submit" class="button-color"/>
+      <div class="form-floating">
+        <label for="assignto">Assign to</label>
+        <input type="text" id="assignto" formControlName="assignto">
+        <div *ngif="assigntoIsEmpty" class="empty">
+          Add a PID.
+        </div>
+      </div>
 
-      </form>
-    </div>
+      <button type="submit" class="button">Submit</button>
+      <br>
   </div>
+  </form>
+    </div>
 </main>
 </body>
 <!--
