@@ -12,7 +12,9 @@ export class NavbarComponent {
   constructor(private http: HttpClient) {}
 
    postSignout() {
-    this.http.post('http://localhost:8080/api/auth/signout')
+    let user = 'hej'; 
+    this.http.post('http://localhost:8080/api/auth/signout', user)
+    window.location.href
    }
 
 }
