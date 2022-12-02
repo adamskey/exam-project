@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private http: HttpClient) {}
+
+   postSignout() {
+    this.http.post('http://localhost:8080/api/auth/signout')
+   }
+
 }
+
