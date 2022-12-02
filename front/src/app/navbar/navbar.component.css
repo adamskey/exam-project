@@ -25,10 +25,7 @@ background-color: #f0f2f5;
 .active{
 background-color: #F57D3B;
 }
-.search{
-padding: 30px;
 
-}
 .fa.fa-home{
 color: #F57D3B;
 
@@ -41,4 +38,13 @@ color: #F57D3B;
 }
 .frame{
 margin-left: 70px;
+}
+.button{
+background-color: #F57D3B;
+cursor: pointer;
+margin-top: 35px;
+border: none;
+border-radius: 5px;
+padding: 8px 10px;
+margin-left: 90px;
 }
