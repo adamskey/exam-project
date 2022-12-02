@@ -9,15 +9,17 @@
   <title>Document</title>
 </head>
 
-<body>
+
 <main>
   <form method="post" action="">
+    <br>
+
     <fieldset>
       <legend>New task</legend>
 
-
-      Category<br>
-      <select>
+  <div class="fields">
+      <a class="category">Category</a>
+      <select >
         <option> New loan </option>
         <option> Extend loan </option>
         <option> Pay off </option>
@@ -27,23 +29,29 @@
       <label for="title">Title</label>
       <br>
       <input type="text" id="title">
-
+      <br>
       <label for="description">Description </label>
       <textarea id="description"></textarea>
+      <br>
 
       <label for="enddate">End date</label>
       <br>
       <input type="date" id="enddate" required>
-      <br>
+
       <label for="assignto">Assign to</label>
-      <br>
+        <br>
+
       <input type="text" id="assignto" required>
-      <br>
+
+
+
       <input type="submit" name="submit" id="submit" value="Submit" />
+      <br>
+  </div>
     </fieldset>
   </form>
 </main>
-</body>
+
 
 </html>
 
