@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { isEmpty } from '../string-utilities';
 import { AppComponent } from '../app.component';
 import { CategoryService } from '../category.service';
+import { PriorityService } from '../priority.service';
 
 @Component({
   selector: 'app-newticket',
@@ -31,13 +32,18 @@ newticketForm = this.formBuilder.group({
 
   constructor(
     private formBuilder: FormBuilder,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private priorityService: PriorityService
 
   ) { }
   var1:any
+  var2:any
 
 categoryList!: Observable<{
   taskCategory:string
+}[]>;
+priorityList!:Observable<{
+priority:string
 }[]>;
 
   onSubmit(): void {
@@ -68,6 +74,10 @@ categoryList!: Observable<{
     }
   }
   ngOnInit(): void {
+    this.priorityService.getPriorityList().subscribe((response)=>{
+      this.var2 = response;
+    })
+    
     this.categoryService.getCategoryList().subscribe((response)=>{
       this.var1 = response;
     })

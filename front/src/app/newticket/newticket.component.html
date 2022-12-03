@@ -23,27 +23,21 @@
           <div class="two-small">
             <div class="form-floating small">
              <label for="dropdown" class="category">Category *</label>
-            <select type="dropdown " class="form-control" formControlName="category">
-              <option *ngFor="let cat of var1">{{ cat.categoryType}}</option>
+            <select type="dropdown " class="form-control" formControlName="category" required>
+              <option disabled selected value>Choose category: </option>
+              <option *ngFor="let cat of var1" >{{ cat.categoryType}}</option>
             </select>
-              <div *ngIf="enddateIsEmpty" class="error">
-                Choose an enddate.
-              </div>
 			</div>
             
 
 
             <div class="form-floating small">
              <label for="dropdown" class="category">Priority *</label>
-            <select type="dropdown " class="form-control" formControlName="priority">
-              <option> 4 - Low </option>
-              <option> 3 - Normal </option>
-              <option> 2 - High </option>
-              <option> 1 - Critical </option>
+            <select type="dropdown " class="form-control" formControlName="priority" required>
+              <option *ngFor="let prio of var2" selected>
+                {{ prio.priorityName }}</option>
+                
             </select>
-            <div *ngIf="assigntoIsEmpty" class="error">
-              Choose asignee
-            </div>
           </div>
           </div>
 
@@ -53,6 +47,7 @@
               Choose a category.
             </div>
           </div>
+          
 
           <div class="form-floating">
             <label for="title">Title *</label>
@@ -74,7 +69,7 @@
           <div class="two-small">
             <div class="form-floating small">
               <label for="enddate">End date *</label>
-              <input type="date" id="enddate" formControlName="enddate" class="form-control">
+              <input type="date" id="enddate" formControlName="enddate" class="form-control" required>
               <div *ngIf="enddateIsEmpty" class="error">
                 Choose an enddate.
               </div>
