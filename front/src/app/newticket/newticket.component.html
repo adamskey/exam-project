@@ -24,10 +24,7 @@
             <div class="form-floating small">
              <label for="dropdown" class="category">Category *</label>
             <select type="dropdown " class="form-control" formControlName="category">
-              <option> New loan </option>
-              <option> Extend loan </option>
-              <option> Pay off </option>
-              <option> Pay interest </option>
+              <option *ngFor="let cat of var1">{{ cat.categoryType}}</option>
             </select>
               <div *ngIf="enddateIsEmpty" class="error">
                 Choose an enddate.

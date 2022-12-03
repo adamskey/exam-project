@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { isEmpty } from '../string-utilities';
+import { AppComponent } from '../app.component';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-newticket',
@@ -17,6 +21,7 @@ export class NewticketComponent implements OnInit {
 
 newticketForm = this.formBuilder.group({
     category: '',
+    priority:'',
     title: '',
     description: '',
     enddate: '',
@@ -25,9 +30,16 @@ newticketForm = this.formBuilder.group({
   });
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private categoryService: CategoryService
 
   ) { }
+  var1:any
+
+categoryList!: Observable<{
+  taskCategory:string
+}[]>;
+
   onSubmit(): void {
   if (this.newticketForm.value.category == '' || isEmpty(this.newticketForm.value.category)){
   this.categoryIsEmpty = true;
@@ -56,6 +68,10 @@ newticketForm = this.formBuilder.group({
     }
   }
   ngOnInit(): void {
+    this.categoryService.getCategoryList().subscribe((response)=>{
+      this.var1 = response;
+    })
+    console.log(this.var1)
 
   }
 }

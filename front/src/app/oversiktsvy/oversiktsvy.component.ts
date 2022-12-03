@@ -15,10 +15,10 @@ import { AppComponent } from '../app.component';
 export class OversiktsvyComponent implements OnInit {
 
 
-  constructor(private taskListService: TaskListService,
-    private app: AppComponent) {
-
-  }
+  constructor(
+    private taskListService: TaskListService,
+    private app: AppComponent
+  ) {}
   var1: any;
 
   taskList!: Observable<{

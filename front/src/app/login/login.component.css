@@ -20,8 +20,11 @@ body {
   margin: auto;
 
 }
-.card{
-background-color: white;
+.card {
+  background-color: #f1f1f1;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 30px;
+  padding: 40px 10px 40px 10px;
 }
 .button-color{
 background-color: #F57D3B;
