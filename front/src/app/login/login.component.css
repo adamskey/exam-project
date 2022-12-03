@@ -50,15 +50,13 @@ float: center;
 
 .form-signin input[type="text"] {
   margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  
 
 }
 
 .form-signin input[type="password"] {
   margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  
 }
 .hidden{
     visibility: hidden;
@@ -71,6 +69,10 @@ float: center;
 }
 .error{
     color: red;
+}
+.label {
+  padding-top: 10px;
+  font-weight: bold;
 }
 
 

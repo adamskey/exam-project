@@ -4,7 +4,7 @@
             <form name="loginform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <img class="logo" src="/assets/loggo.png" width="160">
                 <div class="form-floating">
-                    <label for="pid">P-ID</label>
+                    <label class="label" for="pid">P-ID</label>
                     <input type="text" class="form-control" name="pid" id="pid" placeholder="ex. p901xxx"
                         formControlName="pid">
                 </div>
@@ -12,7 +12,7 @@
                     <div *ngIf="pidHasError" class="error">
                         Enter P-ID
                     </div>
-                    <label for="password">Password</label>
+                    <label class="label" for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password"
                         placeholder=" ex. Handboll8" formControlName="password" ng-model="password" required>
                 </div>
