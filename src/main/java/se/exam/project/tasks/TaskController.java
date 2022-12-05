@@ -26,6 +26,12 @@ public class TaskController {
         return taskJDBCRepository.getTasksByUserId(id);
     }
 
+    @GetMapping("/overviewbyteam")
+    public List<DisplayTask> overviewByTeam() {
+        int id = 1;
+        return taskJDBCRepository.getTaskByTeamId(id);
+    }
+
 //    @GetMapping("/overviewById")
 //    public List<Tasks> overviewById(Long id) {
 //        return (List<Tasks>) taskRepository.findByAssignedTo(id);

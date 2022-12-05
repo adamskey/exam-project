@@ -12,7 +12,7 @@ body {
   padding-top: 0px;
   padding-bottom: 5px;
   background-color: #f5f5f5;
-  height: 100%;
+  height: 80%;
 }
 i{
   color:#F57D3B;
@@ -111,5 +111,5 @@ p{
   margin-top: -15px;
   margin-bottom: -0.1px;
   font-style: italic;
-  
+
 }
