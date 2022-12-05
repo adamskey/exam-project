@@ -6,10 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class SearchPipe implements PipeTransform {
 
-
-
-
-    
     transform(languages: string[], searchInput: string): any[] {
         if (!searchInput) {
             return [];

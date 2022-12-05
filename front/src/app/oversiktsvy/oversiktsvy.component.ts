@@ -19,6 +19,7 @@ import { SearchPipe } from '../search.pipe';
 
 @Injectable()
 export class OversiktsvyComponent implements OnInit {
+  public searchFilter: any = '';
 
   
   positionOptions: TooltipPosition[] = ['right'];
