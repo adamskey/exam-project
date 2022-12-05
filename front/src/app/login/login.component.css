@@ -50,13 +50,11 @@ float: center;
 
 .form-signin input[type="text"] {
   margin-bottom: -1px;
-  
-
 }
 
 .form-signin input[type="password"] {
   margin-bottom: 10px;
-  
+
 }
 .hidden{
     visibility: hidden;
