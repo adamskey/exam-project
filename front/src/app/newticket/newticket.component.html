@@ -50,9 +50,9 @@
           
 
           <div class="form-floating">
-            <label for="title">Title *</label>
+            <label for="title">Title</label><p>(max 50 characters)</p>
 
-            <input type="text" id="title" formControlName="title" class="form-control">
+            <input type="text" id="title" formControlName="title" class="form-control" maxlength="50">
 
             <div *ngIf="titleIsEmpty" class="error">
               Add a title.
