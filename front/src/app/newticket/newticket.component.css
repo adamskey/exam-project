@@ -106,3 +106,10 @@ label {
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
 }
+p{
+  font-size: small;
+  margin-top: -15px;
+  margin-bottom: -0.1px;
+  font-style: italic;
+  
+}

@@ -20,6 +20,7 @@ export class OversiktsvyComponent implements OnInit {
     private app: AppComponent
   ) {}
   var1: any;
+  
 
   taskList!: Observable<{
     id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
@@ -31,8 +32,9 @@ export class OversiktsvyComponent implements OnInit {
       this.var1 = response;
     })
     console.log(this.var1)
+  }
 
-}
+
 
 }
 
