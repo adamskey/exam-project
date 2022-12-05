@@ -19,7 +19,7 @@ export class DetaljvyComponent implements OnInit  {
   constructor(
     private taskListService: TaskListService,
     private route: ActivatedRoute,
-    private currentTask: Task
+    public currentTask: Task
   ) {}
 
   var1: any;
@@ -41,9 +41,9 @@ export class DetaljvyComponent implements OnInit  {
           this.currentTask = obj;
         }
       }
-    
+
   }
 
-  
+
 
 }
