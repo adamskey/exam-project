@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NewticketComponent } from './newticket/newticket.component';
 import { OversiktsvyComponent } from './oversiktsvy/oversiktsvy.component';
+import { DetaljvyComponent } from './detaljvy/detaljvy.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: '', pathMatch: 'full', component: LoginComponent
+  },
+  {
+    path: 'detail/:taskId', component: DetaljvyComponent
   }
 ];
 

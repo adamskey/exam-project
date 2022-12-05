@@ -19,9 +19,9 @@ export class OversiktsvyComponent implements OnInit {
     private taskListService: TaskListService,
     private app: AppComponent
   ) {}
+
   var1: any;
   
-
   taskList!: Observable<{
     id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
     completed: Date, title: string, description: string, assignedTo: number, priorityId: number
