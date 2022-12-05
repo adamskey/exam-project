@@ -36,27 +36,27 @@ export class OversiktsvyComponent implements OnInit {
 
 }
 
-function searchTasks() {
+// function searchTasks() {
   
-  const filteredTasks = allTasks.filter(checkTask)
+//   const filteredTasks = allTasks.filter(checkTask)
 
-  let html = ""
+//   let html = ""
 
-  const divStrings = filteredTasks.map(createDiv)
+//   const divStrings = filteredTasks.map(createDiv)
 
-  html = divStrings.join("")
+//   html = divStrings.join("")
 
-  document.querySelector(".tasksResult").innerHTML = html
+//   document.querySelector(".tasksResult").innerHTML = html
 
-}
-function checkTask(tasklist) {
-  return tasklist.description.includes(document.querySelector(".searchText").value)
-}
-function createDiv(g) {
-  return `<div class="row">
-                    <img src="gnomes\\${g.file}">
-                    <div class="description">${g.description}</div>
-                    <div class="price">${g.price} kr</div>
-                </div>`
-}
-}
+// }
+// function checkTask(tasklist) {
+//   return tasklist.description.includes(document.querySelector(".searchText").value)
+// }
+// function createDiv(g) {
+//   return `<div class="row">
+//                     <img src="gnomes\\${g.file}">
+//                     <div class="description">${g.description}</div>
+//                     <div class="price">${g.price} kr</div>
+//                 </div>`
+// }
+// }
