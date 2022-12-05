@@ -2,7 +2,6 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { TooltipPosition} from '@angular/material/tooltip';
 import { Pipe, PipeTransform } from '@angular/core';
 
 
@@ -21,9 +20,6 @@ import { SearchPipe } from '../search.pipe';
 export class OversiktsvyComponent implements OnInit {
   public searchFilter: any = '';
   searchForm:any;
-
-
-
 
   constructor(
     private taskListService: TaskListService,
