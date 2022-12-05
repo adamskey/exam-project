@@ -1,15 +1,18 @@
 <div class="container">
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-        </tr>
+    <div class="card">
+        <table>
+            <tr>
+                <th>ID, Title</th>
 
-        <tr *ngFor="let tasks of var1">
+            </tr>
 
-            <td><span>{{ tasks.id }}</span></td>
-            <td><span>{{ tasks.title }}</span></td>
+            <tr *ngFor="let tasks of var1">
+                <td><span><b>{{ tasks.id }}</b></span>
+                    <span>&nbsp;&nbsp;</span>
+                    <span><i>{{ tasks.title }}</i></span>
+                </td>
 
-        </tr>
-    </table>
+            </tr>
+        </table>
+    </div>
 </div>
