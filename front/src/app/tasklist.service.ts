@@ -19,4 +19,8 @@ export class TaskListService{
         return this.http.get('http://localhost:8080/tasks/overview2')
     }
 
+    getTaskListByTeamId() {
+    return this.http.get('http://localhost:8080/tasks/overviewbyteam')
+    }
+
 }
