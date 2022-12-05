@@ -11,6 +11,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class AppComponent {
   title = 'front';
   var1: any;
+  public searchFilter: any = '';
   constructor(public http: HttpClient){}
   
   

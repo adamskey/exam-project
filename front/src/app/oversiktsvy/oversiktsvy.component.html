@@ -4,16 +4,17 @@
     <div class="searchTextContainer">
         <span class="material-symbols-outlined">
             search
-        </span><input class="searchText" id="searchText" onkeyup="searchTasks()" placeholder="Search" name="searchInput">
-
-
+        </span>
+            <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="Search">
     </div>
     <div class="card">
+  
         <table>
             <div class="infoIcon">
                 <span class="material-symbols-outlined">
-                        help
-                    </span>
+                    help
+                </span>
 
             </div>
             <div class="grid-container">
@@ -26,7 +27,7 @@
             </div>
 
 
-            <tr *ngFor="let tasks of var1">
+            <tr *ngFor="let tasks of var1 | filter:searchText">
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
                     <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<span
