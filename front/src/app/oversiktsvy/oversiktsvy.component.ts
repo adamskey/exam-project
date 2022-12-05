@@ -1,9 +1,15 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { TooltipPosition} from '@angular/material/tooltip';
+import { Pipe, PipeTransform } from '@angular/core';
+
 
 import { TaskListService } from '../tasklist.service';
 import { AppComponent } from '../app.component';
+import { SearchPipe } from '../search.pipe';
+
 
 @Component({
   selector: 'app-oversiktsvy',
@@ -13,6 +19,10 @@ import { AppComponent } from '../app.component';
 
 @Injectable()
 export class OversiktsvyComponent implements OnInit {
+
+  
+  positionOptions: TooltipPosition[] = ['right'];
+  position = new FormControl(this.positionOptions[0]);
 
 
   constructor(
@@ -33,32 +43,8 @@ export class OversiktsvyComponent implements OnInit {
     })
     console.log(this.var1)
   }
+  
 
 
 
 }
-
-// function searchTasks() {
-  
-//   const filteredTasks = allTasks.filter(checkTask)
-
-//   let html = ""
-
-//   const divStrings = filteredTasks.map(createDiv)
-
-//   html = divStrings.join("")
-
-//   document.querySelector(".tasksResult").innerHTML = html
-
-// }
-// function checkTask(tasklist) {
-//   return tasklist.description.includes(document.querySelector(".searchText").value)
-// }
-// function createDiv(g) {
-//   return `<div class="row">
-//                     <img src="gnomes\\${g.file}">
-//                     <div class="description">${g.description}</div>
-//                     <div class="price">${g.price} kr</div>
-//                 </div>`
-// }
-// }
