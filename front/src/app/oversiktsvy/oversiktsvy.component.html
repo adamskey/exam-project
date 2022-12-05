@@ -4,16 +4,23 @@
     <div class="searchTextContainer">
         <span class="material-symbols-outlined">
             search
-        </span><input class="searchText" id="searchText" onkeyup="searchTasks()" placeholder="Search" name="searchInput">
+        </span>
+        <form [formGroup]="searchForm">
+            <input type="text" formControlName="search" class="searchText" id="search"
+                placeholder="Search" name="listSearch">
+        </form>
 
 
     </div>
     <div class="card">
+       <li *ngFor="let tasks of var1 | search: searchForm.value.search">
+        {{tasks}}
+       </li>
         <table>
             <div class="infoIcon">
                 <span class="material-symbols-outlined">
-                        help
-                    </span>
+                    help
+                </span>
 
             </div>
             <div class="grid-container">

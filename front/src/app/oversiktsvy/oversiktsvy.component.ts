@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { TooltipPosition} from '@angular/material/tooltip';
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -20,16 +20,20 @@ import { SearchPipe } from '../search.pipe';
 @Injectable()
 export class OversiktsvyComponent implements OnInit {
   public searchFilter: any = '';
+  searchForm:any;
 
-  
-  positionOptions: TooltipPosition[] = ['right'];
-  position = new FormControl(this.positionOptions[0]);
+
 
 
   constructor(
     private taskListService: TaskListService,
-    private app: AppComponent
-  ) {}
+    private app: AppComponent,
+    private formBuilder: FormBuilder
+  ) {
+    this.searchForm = formBuilder.group({
+      search: '',
+    });
+  }
 
   var1: any;
   
