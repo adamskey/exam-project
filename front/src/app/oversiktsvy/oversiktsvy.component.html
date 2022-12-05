@@ -1,17 +1,37 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <div class="container">
+    <div class="searchTextContainer">
+        <span class="material-symbols-outlined">
+            search
+        </span><input class="searchText" id="searchText" onkeyup="searchTasks()" placeholder="Search" name="searchInput">
+        
+        
+    </div>
     <div class="card">
         <table>
-            <tr>
-                <th>ID, Title</th>
+            <div class="infoIcon">
+                <span class="material-symbols-outlined">
+                        help
+                    </span>
+                
+            </div>
+            <div class="grid-container">
+                <td><b>Id</b></td>
+                <td><b>Title</b></td>
+                <td><b>Description</b></td>
+                <td><b>Creation date</b></td>
+                <td><b>End date</b></td>
 
-            </tr>
+            </div>
+
 
             <tr *ngFor="let tasks of var1">
-                <td><span><b>{{ tasks.id }}</b></span>
-                    <span>&nbsp;&nbsp;</span>
-                    <span><i>{{ tasks.title }}</i></span>
+                <td>
+                    <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
+                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<span
+                                ng-show="description.length"></span></i></span>
                 </td>
-
             </tr>
         </table>
     </div>
