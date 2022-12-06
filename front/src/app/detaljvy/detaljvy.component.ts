@@ -4,7 +4,6 @@ import { TaskListService } from '../tasklist.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { OversiktsvyComponent } from '../oversiktsvy/oversiktsvy.component';
-import { Task } from '../app.task';
 import { ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
 
@@ -17,33 +16,24 @@ import { AppComponent } from '../app.component';
 export class DetaljvyComponent implements OnInit  {
 
   constructor(
-    private taskListService: TaskListService,
     private route: ActivatedRoute,
-    public currentTask: Task,
     private formBuilder: FormBuilder,
     private app: AppComponent,
+    private http: HttpClient
   ) {}
 
 
-  var1: any;
+  currentTask: any;
 
 
   ngOnInit(): void {
-    this.taskListService.getTaskListByUserId().subscribe((response) => {
-      this.var1 = response;
-
-
-    })
 
     const routeParams = this.route.snapshot.paramMap;
     const taskIdFromRoute = Number(routeParams.get('taskId'))
 
-      for(let task in this.var1) {
-        var obj = JSON.parse(task)
-        if (obj.id == taskIdFromRoute) {
-          this.currentTask = obj;
-        }
-      }
+    this.http.get('http://localhost:8080/tasks/detail/' + taskIdFromRoute).subscribe((response) => {
+      this.currentTask = response.valueOf;
+    })
 
   }
 
