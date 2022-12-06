@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { NewticketComponent } from './newticket/newticket.component';
 import { StatsComponent } from './stats/stats.component';
 import { BodyComponent } from './body/body.component';
 import { SearchPipe } from './search.pipe';
-
 
 
 @NgModule({
