@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 import { isEmpty } from '../string-utilities';
 
@@ -18,10 +19,9 @@ export class LoginComponent implements OnInit {
     password: ''
   });
 
-
-
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
 
   ) { }
   onSubmit(): void {
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.pidHasError = false;
     }
+    this.router.navigate(['/overview']);
 
   }
   ngOnInit(): void {
