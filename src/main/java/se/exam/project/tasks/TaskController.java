@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -49,5 +50,10 @@ public class TaskController {
     public void updateTask(@RequestBody Tasks task){
         task.setEdited(new Date(System.currentTimeMillis()));
         taskRepository.save(task);
+    }
+
+    @GetMapping("/detail/{id}")
+    public Optional<Tasks> viewTask(@PathVariable Integer id) {
+        return taskRepository.findById(id);
     }
 }
