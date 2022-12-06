@@ -25,14 +25,14 @@
              <label for="dropdown" class="category">Category *</label>
             <select type="dropdown " class="form-control" formControlName="category" required>
               <option disabled selected value>Choose category: </option>
-              <option *ngFor="let cat of var1" >{{ cat.categoryType}}</option>
+              <option *ngFor="let cat of var1">{{ cat.categoryType}}</option>
             </select>
 			</div>
             
 
 
             <div class="form-floating small">
-             <label for="dropdown" class="category">Priority *</label>
+             <label for="dropdown" class="category">Priority</label>
             <select type="dropdown " class="form-control" formControlName="priority" required>
               <option *ngFor="let prio of var2" selected>
                 {{ prio.priorityName }}</option>
@@ -78,7 +78,7 @@
 
 
             <div class="form-floating small">
-              <label for="assignto">Assign to *</label>
+              <label for="assignto">Assign to</label>
               <input class="form-control small" type="text" id="assignto" required>
             </div>
             <div *ngIf="assigntoIsEmpty" class="error">
