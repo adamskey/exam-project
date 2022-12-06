@@ -89,18 +89,6 @@ label {
   visibility: hidden;
 }
 
-.password-error {
-  border: solid 1px;
-}
-
-.pid-error {
-  border: solid 1px;
-}
-
-.error {
-  color: red;
-}
-
 .two-small {
   display: grid;
   grid-template-columns: 1fr 1fr;

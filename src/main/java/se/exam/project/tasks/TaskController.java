@@ -36,4 +36,9 @@ public class TaskController {
 //    public List<Tasks> overviewById(Long id) {
 //        return (List<Tasks>) taskRepository.findByAssignedTo(id);
 //    }
+
+    @PostMapping("/save")
+    public void saveTask(@RequestBody Tasks task) {
+        taskRepository.save(task);
+    }
 }
