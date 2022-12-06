@@ -16,8 +16,7 @@ import { NewticketComponent } from './newticket/newticket.component';
 import { StatsComponent } from './stats/stats.component';
 import { BodyComponent } from './body/body.component';
 import { SearchPipe } from './search.pipe';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,8 @@ import { SearchPipe } from './search.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

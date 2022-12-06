@@ -62,7 +62,7 @@ public class TaskController {
     }
 
     @GetMapping("/detail/{id}")
-    public Optional<Tasks> viewTask(@PathVariable Integer id) {
-        return taskRepository.findById(id);
+    public DisplayTask viewTask(@PathVariable Integer id) {
+        return taskJDBCRepository.getTaskById(id);
     }
 }
