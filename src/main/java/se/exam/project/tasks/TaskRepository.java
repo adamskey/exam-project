@@ -9,5 +9,6 @@ import java.util.List;
 public interface TaskRepository extends CrudRepository<Tasks, Integer> {
 
     List<Tasks> findByAssignedTo(User user);
+    Tasks findFirstByOrderByIdDesc();
 
 }
