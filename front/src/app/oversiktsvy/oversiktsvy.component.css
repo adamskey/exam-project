@@ -81,3 +81,37 @@ background-color: none;
 }
 
 
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+}
+
+a {
+  background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  --bg-h: 100%;
+}
+a:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+.underline {
+  padding-bottom: 2px;
+  --bg-h: 2px;
+}
+a:link{
+  text-decoration:dotted;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 20;
+}
+
+
+
