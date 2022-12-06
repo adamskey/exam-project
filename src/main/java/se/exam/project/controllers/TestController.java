@@ -1,10 +1,10 @@
 package se.exam.project.controllers;
 
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import se.exam.project.roles.ERole;
+import se.exam.project.roles.Roles;
+import se.exam.project.user.User;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -16,10 +16,15 @@ public class TestController {
         return "Public content";
     }
 
-    @GetMapping("/user")
-    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
-    public String userAccess() {
-        return "User Content.";
+    @PostMapping("/user")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_MODERATOR')")
+    public String userAccess(@RequestBody User user) {
+        for (Roles role : user.getRole()) {
+            if (role.getName().equals(ERole.ROLE_USER)) {
+                return "User Content.";
+            }
+        }
+        return null;
     }
 
     @GetMapping("/mod")
