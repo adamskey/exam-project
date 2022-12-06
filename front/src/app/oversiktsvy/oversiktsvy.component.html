@@ -9,7 +9,7 @@
                 placeholder="Search">
     </div>
     <div class="card">
-  
+
         <table>
             <div class="infoIcon">
                 <span class="material-symbols-outlined">
@@ -33,16 +33,19 @@
             </div>
 
 
-            <tr *ngFor="let tasks of var1 | filter:searchText">
-                {{searchText}}
+            <tr *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
+                
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
-                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a href="#" class="underline">view ticket<span class="material-symbols-outlined">
+                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a routerLink="#" class="underline">view ticket<span class="material-symbols-outlined">
                         expand_more
                         </span></a><span
                                 ng-show="description.length"></span></i></span>
                 </td>
+        
+
             </tr>
         </table>
     </div>
 </div>
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { isEmpty } from '../string-utilities';
 
@@ -19,11 +19,10 @@ export class LoginComponent implements OnInit {
     password: ''
   });
 
-
-
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private route: Router
+
   ) { }
 
   token: string = '';
@@ -40,17 +39,7 @@ export class LoginComponent implements OnInit {
       this.pidHasError = false;
     }
 
-    console.log(this.loginForm.value)
-
-    if(!this.pidHasError && !this.passwordHasError) {
-      this.http.post('http://localhost:8080/login', this.loginForm.value).subscribe((response) => { 
-      this.token = JSON.stringify(response)
-        localStorage.setItem('token', this.token)
-      })
-    }
-
-    
-
+    this.route.navigate(['/overview'])
   }
   ngOnInit(): void {
 
