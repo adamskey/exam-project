@@ -14,7 +14,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./detaljvy.component.css']
 })
 @Injectable()
-export class DetaljvyComponent implements OnInit  {
+export class DetaljvyComponent implements OnInit {
 
   constructor(
     private taskListService: TaskListService,
@@ -22,29 +22,23 @@ export class DetaljvyComponent implements OnInit  {
     public currentTask: Task,
     private formBuilder: FormBuilder,
     private app: AppComponent,
-  ) {}
+    private http: HttpClient
+  ) { }
 
 
   var1: any;
-
+  task: any;
 
   ngOnInit(): void {
-    this.taskListService.getTaskListByUserId().subscribe((response) => {
-      this.var1 = response;
-
-
-    })
-
+ 
     const routeParams = this.route.snapshot.paramMap;
     const taskIdFromRoute = Number(routeParams.get('taskId'))
-
-      for(let task in this.var1) {
-        var obj = JSON.parse(task)
-        if (obj.id == taskIdFromRoute) {
-          this.currentTask = obj;
-        }
-      }
-
+    this.getDetails(taskIdFromRoute).subscribe((response) => {
+      this.task = response;
+    })
+  }
+  getDetails(id: number) {
+    return this.http.get('http://localhost:8080/tasks/detail/' + id)
   }
 
 

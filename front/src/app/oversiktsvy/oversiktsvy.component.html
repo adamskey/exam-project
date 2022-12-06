@@ -37,7 +37,7 @@
                 
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
-                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a routerLink="#" class="underline">view ticket<span class="material-symbols-outlined">
+                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a [routerLink]="['/detail/', tasks.id]" class="underline">view ticket<span class="material-symbols-outlined">
                         expand_more
                         </span></a><span
                                 ng-show="description.length"></span></i></span>
