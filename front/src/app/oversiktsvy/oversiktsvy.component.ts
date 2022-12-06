@@ -20,6 +20,7 @@ import { SearchPipe } from '../search.pipe';
 export class OversiktsvyComponent implements OnInit {
   public searchFilter: any = '';
   searchText:any;
+  ChosenId: boolean = false;
 
   constructor(
     private taskListService: TaskListService,
@@ -28,7 +29,7 @@ export class OversiktsvyComponent implements OnInit {
   ) {}
 
   var1: any;
-  
+
   taskList!: Observable<{
     id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
     completed: Date, title: string, description: string, assignedTo: number, priorityId: number
@@ -40,8 +41,11 @@ export class OversiktsvyComponent implements OnInit {
     })
     console.log(this.var1)
   }
-  
-
-
-
+  onSubmit(): void {
+if (this.ChosenId != this.var1){
+this.ChosenId= true;
+} else {
+  this.ChosenId = false;
+}
+}
 }

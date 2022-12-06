@@ -1,23 +1,29 @@
-<!--<!doctype html>-->
-<!--<html lang="en">-->
+<!doctype html>
+<html lang="en">
 
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport"-->
-<!--        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<!--  <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-<!--  <title>Document</title>-->
-<!--</head>-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+</head>
 
 <body>
   <main class="form-signin">
     <div class="card">
       <div class="card-body">
-        <form name="currentTask" *ngIf="currentTask">
+        <form name="currentTask" id="currentTask">
 
           <div class="form-floating">
 
             <legend>Task </legend>
+          </div>
+
+          <div class="form-floating">
+            <label for="taskid" id="taskid">Id</label><p></p>
+            <div ng-show='currentTask'>{{ currentTask.id }}
+            </div>
           </div>
 
           <div class="two-small">
@@ -56,6 +62,13 @@
               </div>
             </div>
 
+            <div class="two-small">
+              <div class="form-floating small">
+                <label for="creationdate" id="creationdate">Creation Date</label>
+                <div ng-show='currentTask'>{{ currentTask.createdTimestamp }}
+                </div>
+              </div>
+              </div>
 
             <div class="form-floating small">
               <label for="assignto" id="assignto">Assign to</label>
@@ -64,7 +77,7 @@
             </div>
           </div>
 
-          <input type="complete" name="complete" id="complete" value="complete" class="button-color" />
+          <input type="submit" name="submit" id="submit" value="submit" class="button-color" />
 
         </form>
       </div>
@@ -73,4 +86,4 @@
 </body>
 
 
-<!--</html>-->
+</html>
