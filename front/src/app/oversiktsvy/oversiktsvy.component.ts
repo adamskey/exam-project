@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Pipe, PipeTransform } from '@angular/core';
 
-
 import { TaskListService } from '../tasklist.service';
 import { AppComponent } from '../app.component';
 import { SearchPipe } from '../search.pipe';
@@ -29,6 +28,8 @@ export class OversiktsvyComponent implements OnInit {
   ) {}
 
   var1: any;
+  p: number= 1;
+  count: number= 10;
 
   taskList!: Observable<{
     id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,

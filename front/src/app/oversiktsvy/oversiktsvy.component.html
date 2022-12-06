@@ -34,18 +34,21 @@
 
 
             <tr *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
-                
-                <td>
+                  <tr *ngFor="let tasks of var1 | paginate: { itemsPerPage: count, currentPage: p}">
+          <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
                     <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a routerLink="#" class="underline">view ticket<span class="material-symbols-outlined">
                         expand_more
                         </span></a><span
                                 ng-show="description.length"></span></i></span>
                 </td>
-        
+
 
             </tr>
         </table>
     </div>
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
 </div>
 
