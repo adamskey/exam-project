@@ -7,6 +7,7 @@ import { isEmpty } from '../string-utilities';
 import { AppComponent } from '../app.component';
 import { CategoryService } from '../category.service';
 import { PriorityService } from '../priority.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newticket',
@@ -33,8 +34,9 @@ newticketForm = this.formBuilder.group({
   constructor(
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
-    private priorityService: PriorityService
-
+    private priorityService: PriorityService,
+    private http: HttpClient,
+    private router: Router
   ) { }
   var1:any
   var2:any
@@ -67,11 +69,10 @@ priority:string
     } else {
     this.enddateIsEmpty = false;
     }
-    if (isEmpty(this.newticketForm.value.assignto)){
-    this.assigntoIsEmpty = true;
-    } else {
-    this.assigntoIsEmpty = false;
-    }
+   if(!this.categoryIsEmpty || this.titleIsEmpty || this.descriptionIsEmpty || this.enddateIsEmpty ){
+    this.saveTask();
+   }
+
   }
   ngOnInit(): void {
     this.priorityService.getPriorityList().subscribe((response)=>{
@@ -83,5 +84,12 @@ priority:string
     })
     console.log(this.var1)
 
+  }
+
+  saveTask() {
+    this.http.post('http://localhost:8080/tasks/newtask', this.newticketForm.value).subscribe((response) =>{
+      console.log(response)
+    })
+    
   }
 }
