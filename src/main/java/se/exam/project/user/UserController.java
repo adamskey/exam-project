@@ -31,7 +31,6 @@ public class UserController {
             return foundUser;
         }
         return null;
-
     }
 
 //    @RequestMapping("/user")

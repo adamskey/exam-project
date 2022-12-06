@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 import { isEmpty } from '../string-utilities';
 
@@ -14,31 +15,45 @@ export class LoginComponent implements OnInit {
 
 
   loginForm = this.formBuilder.group({
-    pid: '',
+    username: '',
     password: ''
   });
 
 
 
   constructor(
-    private formBuilder: FormBuilder
-
+    private formBuilder: FormBuilder,
+    private http: HttpClient
   ) { }
+
+  token: string = '';
+
   onSubmit(): void {
     if (isEmpty(this.loginForm.value.password)) {
       this.passwordHasError = true;
     } else {
       this.passwordHasError = false;
     }
-    if (isEmpty(this.loginForm.value.pid)) {
+    if (isEmpty(this.loginForm.value.username)) {
       this.pidHasError = true;
     } else {
       this.pidHasError = false;
     }
 
+    console.log(this.loginForm.value)
+
+    if(!this.pidHasError && !this.passwordHasError) {
+      this.http.post('http://localhost:8080/login', this.loginForm.value).subscribe((response) => { 
+      this.token = JSON.stringify(response)
+        localStorage.setItem('token', this.token)
+      })
+    }
+
+    
+
   }
   ngOnInit(): void {
-      
+
   }
 }
 
