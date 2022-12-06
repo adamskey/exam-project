@@ -63,11 +63,14 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
                 .body(new UserInfoResponse(userDetails.getId(),
                                            userDetails.getUsername(),
                                            userDetails.getEmail(),
-                                           roles));
+                                           roles,
+                                           jwt));
     }
 
     @PostMapping("/signup")

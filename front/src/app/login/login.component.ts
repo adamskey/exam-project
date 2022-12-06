@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
 
 import { isEmpty } from '../string-utilities';
 
@@ -15,31 +14,32 @@ export class LoginComponent implements OnInit {
 
 
   loginForm = this.formBuilder.group({
-    pid: '',
+    username: '',
     password: ''
   });
 
   constructor(
-    private formBuilder: FormBuilder,
-    private router: Router
+    private formBuilder: FormBuilder
 
   ) { }
+
+  token: string = '';
+
   onSubmit(): void {
     if (isEmpty(this.loginForm.value.password)) {
       this.passwordHasError = true;
     } else {
       this.passwordHasError = false;
     }
-    if (isEmpty(this.loginForm.value.pid)) {
+    if (isEmpty(this.loginForm.value.username)) {
       this.pidHasError = true;
     } else {
       this.pidHasError = false;
     }
-    this.router.navigate(['/overview']);
 
   }
   ngOnInit(): void {
-      
+
   }
 }
 

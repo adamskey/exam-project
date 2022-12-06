@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { NewticketComponent } from './newticket/newticket.component';
 import { OversiktsvyComponent } from './oversiktsvy/oversiktsvy.component';
 import { DetaljvyComponent } from './detaljvy/detaljvy.component';
-
+import { StatsComponent } from './stats/stats.component'
 const routes: Routes = [
   {
     path: 'login', component: LoginComponent
@@ -20,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'detail/:taskid', component: DetaljvyComponent
+  },
+  {
+  path: 'statistics', component: StatsComponent
   }
 ];
 

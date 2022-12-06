@@ -9,7 +9,7 @@
                 placeholder="Search">
     </div>
     <div class="card">
-  
+
         <table>
             <div class="infoIcon">
                 <span class="material-symbols-outlined">
@@ -18,22 +18,34 @@
 
             </div>
             <div class="grid-container">
-                <td><b>Id</b></td>
-                <td><b>Title</b></td>
-                <td><b>Description</b></td>
+                <td><b>Id <span class="material-symbols-outlined">
+                    format_list_numbered
+                    </span></b></td>
+                <td><b>Title</b><span class="material-symbols-outlined">
+                    sort_by_alpha
+                    </span></td>
+                <td><b>Description<span class="material-symbols-outlined">
+                    sort_by_alpha
+                    </span></b></td>
                 <td><b>Creation date</b></td>
                 <td><b>End date</b></td>
 
             </div>
 
 
-            <tr *ngFor="let tasks of var1 | filter:searchText">
+            <tr>   <a routerLink="detail/:taskid" *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
+                {{searchText}}
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
-                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<span
+                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a routerLink="#" class="underline">view ticket<span class="material-symbols-outlined">
+                        expand_more
+                        </span></a><span
                                 ng-show="description.length"></span></i></span>
                 </td>
+        </a>
+
             </tr>
         </table>
     </div>
 </div>
+
