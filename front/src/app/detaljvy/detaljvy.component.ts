@@ -32,8 +32,11 @@ export class DetaljvyComponent implements OnInit  {
     const taskIdFromRoute = Number(routeParams.get('taskId'))
 
     this.http.get('http://localhost:8080/tasks/detail/' + taskIdFromRoute).subscribe((response) => {
-      this.currentTask = response.valueOf;
+      console.log(response)
+      this.currentTask = response;
     })
+
+    console.log(this.currentTask)
 
   }
 

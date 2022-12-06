@@ -19,7 +19,7 @@ const routes: Routes = [
     path: '', pathMatch: 'full', component: LoginComponent
   },
   {
-    path: 'detail', component: DetaljvyComponent
+    path: 'detail/:taskId', component: DetaljvyComponent
   },
   {
   path: 'statistics', component: StatsComponent
