@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { isEmpty } from '../string-utilities';
 
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: Router
 
   ) { }
 
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.pidHasError = false;
     }
 
+    this.route.navigate(['/overview'])
   }
   ngOnInit(): void {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+
 import { AppComponent } from '../app.component';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css']
 })
-export class StatsComponent implements OnInit {
+export class StatsComponent  {
 
-public chart: any;
+/* public chart: any;
 
 
 
@@ -45,6 +45,6 @@ createChart(){
         aspectRatio:2.5
       }
 
-    });
-  }
+    }); 
+  }*/
 }
