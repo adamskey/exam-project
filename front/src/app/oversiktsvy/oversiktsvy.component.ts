@@ -19,17 +19,13 @@ import { SearchPipe } from '../search.pipe';
 @Injectable()
 export class OversiktsvyComponent implements OnInit {
   public searchFilter: any = '';
-  searchForm:any;
+  searchText:any;
 
   constructor(
     private taskListService: TaskListService,
     private app: AppComponent,
     private formBuilder: FormBuilder
-  ) {
-    this.searchForm = formBuilder.group({
-      search: '',
-    });
-  }
+  ) {}
 
   var1: any;
   

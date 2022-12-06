@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { TaskListService } from '../tasklist.service';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import { OversiktsvyComponent } from '../oversiktsvy/oversiktsvy.component';
 import { Task } from '../app.task';
@@ -12,15 +12,16 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './detaljvy.component.html',
   styleUrls: ['./detaljvy.component.css']
 })
-@Injectable()
-export class DetaljvyComponent implements OnInit  {
 
+export class DetaljvyComponent implements OnInit  {
 
   constructor(
     private taskListService: TaskListService,
     private route: ActivatedRoute,
-    private currentTask: Task
+    public currentTask: Task,
+    private formBuilder: FormBuilder,
   ) {}
+
 
   var1: any;
 
@@ -41,9 +42,9 @@ export class DetaljvyComponent implements OnInit  {
           this.currentTask = obj;
         }
       }
-    
+
   }
 
-  
+
 
 }

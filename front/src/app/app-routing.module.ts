@@ -19,7 +19,7 @@ const routes: Routes = [
     path: '', pathMatch: 'full', component: LoginComponent
   },
   {
-    path: 'detail/:taskId', component: DetaljvyComponent
+    path: 'detail/:taskid', component: DetaljvyComponent
   }
 ];
 
