@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.exam.project.user.User;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -37,8 +40,14 @@ public class TaskController {
 //        return (List<Tasks>) taskRepository.findByAssignedTo(id);
 //    }
 
-    @PostMapping("/save")
-    public void saveTask(@RequestBody Tasks task) {
+    @PostMapping("/newtask")
+    public void newTask(@RequestBody Tasks task) {
+        task.setCreatedTimestamp(new Date(System.currentTimeMillis()));
+        taskRepository.save(task);
+    }
+    @PostMapping("/updatetask")
+    public void updateTask(@RequestBody Tasks task){
+        task.setEdited(new Date(System.currentTimeMillis()));
         taskRepository.save(task);
     }
 }

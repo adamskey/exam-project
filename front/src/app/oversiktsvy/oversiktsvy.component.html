@@ -17,11 +17,16 @@
                 </span>
 
             </div>
-
-          <div class="grid-container">
-                <td><b>Id</b></td>
-                <td><b>Title</b></td>
-                <td><b>Description</b></td>
+            <div class="grid-container">
+                <td><b>Id <span class="material-symbols-outlined">
+                    format_list_numbered
+                    </span></b></td>
+                <td><b>Title</b><span class="material-symbols-outlined">
+                    sort_by_alpha
+                    </span></td>
+                <td><b>Description<span class="material-symbols-outlined">
+                    sort_by_alpha
+                    </span></b></td>
                 <td><b>Creation date</b></td>
                 <td><b>End date</b></td>
 
@@ -29,9 +34,12 @@
 
 
             <tr>   <a href="http://localhost:4200/detail/:" *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
+                {{searchText}}
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
-                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<span
+                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<a href="#" class="underline">view ticket<span class="material-symbols-outlined">
+                        expand_more
+                        </span></a><span
                                 ng-show="description.length"></span></i></span>
                 </td>
         </a>
@@ -40,3 +48,4 @@
         </table>
     </div>
 </div>
+
