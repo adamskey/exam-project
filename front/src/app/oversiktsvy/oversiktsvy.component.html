@@ -33,7 +33,7 @@
 
 
             <tr *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
-                
+                <tr *ngFor="let tasks of var1 | paginate: { itemsPerPage: count, currentPage: p}">
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
                     <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
@@ -41,16 +41,14 @@
                     <span> <b>Description:</b><i> {{ tasks.description | slice:0:150 }}...<a routerLink="#"
                                 class="underline">view ticket<span class="material-symbols-outlined">
                                     expand_more
-                        </span></a><span
-                                ng-show="description.length"></span></i></span>
+                                </span></a><span ng-show="description.length"></span></i></span>
                 </td>
-        
-
             </tr>
+            
         </table>
         <div class="text-right">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </div>
+        </div>
     </div>
 
 </div>
