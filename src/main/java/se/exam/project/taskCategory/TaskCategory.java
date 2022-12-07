@@ -46,4 +46,20 @@ public class TaskCategory {
     public void setCategoryType(String categoryType) {
         this.categoryType = categoryType;
     }
+
+    public Set<Team> getTeamTask() {
+        return teamTask;
+    }
+
+    public void setTeamTask(Set<Team> teamTask) {
+        this.teamTask = teamTask;
+    }
+
+    public List getTaskList() {
+        return TaskList;
+    }
+
+    public void setTaskList(List taskList) {
+        TaskList = taskList;
+    }
 }

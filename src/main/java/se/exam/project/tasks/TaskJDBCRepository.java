@@ -77,6 +77,53 @@ public class TaskJDBCRepository {
         return displayTask;
     }
 
+    public void saveOrUpdate(Tasks task) {
+        if (task.getId() == null) {
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement statement = connection.prepareStatement("INSERT INTO Tasks(TaskCategoryId, CreatedTimestamp, Due, Edited, Completed, Title, Description, AssignedTo, PriorityId)" +
+                         "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+                statement.setInt(1, task.getTaskCategory().getId());
+                statement.setDate(2, task.getCreatedTimestamp());
+                statement.setDate(3, task.getDue());
+                statement.setDate(4, task.getEdited());
+                statement.setDate(5, task.getCompleted());
+                statement.setString(6, task.getTitle());
+                statement.setString(7, task.getDescription());
+                if (task.getAssignedTo() != null) {
+                    statement.setInt(8, task.getAssignedTo().getId());
+                } else {
+                    statement.setNull(8, 4);
+                }
+                if (task.getPriorityId() != null) {
+                    statement.setInt(9, task.getPriorityId().getId());
+                } else {
+                    statement.setNull(9, 4);
+                }
+                statement.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try (Connection connection = dataSource.getConnection();
+            PreparedStatement statement = connection.prepareStatement("UPDATE Tasks" +
+                    "SET TaskCategoryId = ?, CreatedTimestamp = ?, Due = ?, Edited = ?, Completed = ?, Title = ?, Description = ?, AssignedTo = ?, PriorityId = ?" +
+                    "WHERE ID = ?")) {
+                statement.setInt(1, task.getTaskCategory().getId());
+                statement.setDate(2, task.getCreatedTimestamp());
+                statement.setDate(3, task.getDue());
+                statement.setDate(4, task.getEdited());
+                statement.setDate(5, task.getCompleted());
+                statement.setString(6, task.getTitle());
+                statement.setString(7, task.getDescription());
+                statement.setInt(8, task.getAssignedTo().getId());
+                statement.setInt(9, task.getPriorityId().getId());
+                statement.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
 
     private DisplayTask rsDisplayTask(ResultSet rs) throws SQLException {

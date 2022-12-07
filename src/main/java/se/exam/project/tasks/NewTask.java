@@ -1,6 +1,7 @@
 package se.exam.project.tasks;
 
 public class NewTask {
+    private String id;
     private String category;
     private String priority;
     private String title;
@@ -11,13 +12,22 @@ public class NewTask {
     public NewTask() {
     }
 
-    public NewTask(String category, String priority, String title, String description, String enddate, String assignto) {
+    public NewTask(String id, String category, String priority, String title, String description, String enddate, String assignto) {
+        this.id = id;
         this.category = category;
         this.priority = priority;
         this.title = title;
         this.description = description;
         this.enddate = enddate;
         this.assignto = assignto;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCategory() {
@@ -71,7 +81,8 @@ public class NewTask {
     @Override
     public String toString() {
         return "NewTask{" +
-                "category='" + category + '\'' +
+                "id=" + id +
+                ", category='" + category + '\'' +
                 ", priority='" + priority + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

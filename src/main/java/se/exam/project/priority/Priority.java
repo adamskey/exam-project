@@ -42,6 +42,14 @@ public class Priority {
         this.priorityName = priorityName;
     }
 
+    public List getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List taskList) {
+        this.taskList = taskList;
+    }
+
     @Override
     public String toString() {
         return "Priority{" +
