@@ -24,15 +24,17 @@ const routes: Routes = [
     path: 'detail/:taskId', component: DetaljvyComponent
   },
   {
-    path: 'statistics', component: StatsComponent
+  path: 'statistics', component: StatsComponent
   },
   {
-    path: 'unassigned', component: UnassignedComponent
+  path: 'unassigned', component: UnassignedComponent
   },
   {
     path: 'edit/:taskId', component: EditComponent
   }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
