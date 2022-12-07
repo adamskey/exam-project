@@ -17,6 +17,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Injectable()
 export class EditComponent implements OnInit {
 
+  newticketForm = this.formBuilder.group({
+    id: '',
+    category: '',
+    priority:'',
+    title: '',
+    description: '',
+    enddate: '',
+    assignto: '',
+
+  });
+
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -31,7 +42,16 @@ export class EditComponent implements OnInit {
     const taskIdFromRoute = Number(routeParams.get('taskId'))
 
   }
+  onSubmit(): void {
+    this.saveTask()
+  }
+  saveTask() {
+    this.http.post('http://localhost:8080/tasks/newtask', this.newticketForm.value).subscribe((response) =>{
+      console.log(response)
+    })
+    
+  }
 
-  
+
 
 }
