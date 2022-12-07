@@ -40,20 +40,8 @@ label {
   padding: 40px 10px 40px 10px;
 }
 
-.button-color {
-  width: 100%;
-  text-align: center;
-  background-color: #F57D3B;
-  cursor: pointer;
-  margin-top: 15px;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 10px;
-}
-
 .logo {
   margin-left: 50px;
-  margin-center: 40px;
   float: center;
 }
 
@@ -94,6 +82,12 @@ label {
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
 }
+.two-small2 {
+display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
 p{
   font-size: small;
   margin-top: -15px;
@@ -101,3 +95,39 @@ p{
   font-style: italic;
 
 }
+.fa.fa-close{
+color: #F57D3B;
+float: right;
+margin-top: -50px;
+}
+
+
+
+.button-edit {
+  width: 48%;
+  text-align: center;
+  background-color: #F57D3B;
+  cursor: pointer;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  box-shadow: 2px 2px 2px gray;
+
+}
+
+
+.button-color {
+  float: right;
+  width: 48%;
+  text-align: center;
+  background-color:   rgb(126, 235, 107);
+  cursor: pointer;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  box-shadow: 2px 2px 2px gray;
+
+}
+

@@ -10,26 +10,26 @@ import { SearchPipe } from '../search.pipe';
 
 
 @Component({
-  selector: 'app-oversiktsvy',
-  templateUrl: './oversiktsvy.component.html',
-  styleUrls: ['./oversiktsvy.component.css']
+  selector: 'app-unassigned',
+  templateUrl: './unassigned.component.html',
+  styleUrls: ['./unassigned.component.css']
 })
 
 @Injectable()
-export class OversiktsvyComponent implements OnInit {
+export class UnassignedComponent implements OnInit {
   public searchFilter: any = '';
-  searchText: any;
+  searchText:any;
   ChosenId: boolean = false;
 
   constructor(
     private taskListService: TaskListService,
     private app: AppComponent,
     private formBuilder: FormBuilder
-  ) { }
+  ) {}
 
   var1: any;
-  p: number = 1;
-  count: number = 10;
+  p: number= 1;
+  count: number= 10;
 
   taskList!: Observable<{
     id: number, taskCategory: number, createdTimestamp: Date, due: Date, edited: Date,
@@ -43,10 +43,10 @@ export class OversiktsvyComponent implements OnInit {
     console.log(this.var1)
   }
   onSubmit(): void {
-    if (this.ChosenId != this.var1) {
-      this.ChosenId = true;
-    } else {
-      this.ChosenId = false;
-    }
-  }
+if (this.ChosenId != this.var1){
+this.ChosenId= true;
+} else {
+  this.ChosenId = false;
+}
+}
 }
