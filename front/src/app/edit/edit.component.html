@@ -9,14 +9,13 @@
           <input type="hidden" name="id" id="id" formControlName="id">
 
           <div class="form-floating">
-
             <legend>Task</legend>
           </div>
 
           <a href="/overview"><i class="margin-left fa fa-close" style="font-size:36px"></i></a>
 
           <div class="form-floating">
-           
+
             <label for="taskid" id="taskid"></label>
             <p></p>
             <div ng-show='currentTask'>Tasknumber: {{ currentTask.id }}
@@ -28,7 +27,7 @@
               <label for="dropdown" id="dropdown" class="category">Category</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
                 <option> KATEGORI</option>
-  
+
               </select>
               <div ng-value='currentTask'>{{ currentTask.categoryType }}</div>
             </div>
@@ -39,7 +38,7 @@
               <label for="dropdown" id="dropdown2" class="category">Priority</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
                 <option>PRIO OLIKA VAL</option>
-  
+
               </select>
               <div ng-show='currentTask'>{{ currentTask.priorityName }}
               </div>
@@ -59,7 +58,8 @@
             <div> {{ currentTask.description }}</div>
 
             <label for="description" id="description"></label>
-            <textarea id="description" formControlName="description" class="form-control">BESKRVINING AV ÄRENDET</textarea>
+            <textarea id="description" formControlName="description"
+              class="form-control">BESKRVINING AV ÄRENDET{{ currentTask.description }}</textarea>
             <div ng-show='currentTask'>{{ currentTask.description }}
             </div>
           </div>
@@ -108,7 +108,7 @@
           </div>
 
 
-          <a [routerLink]="['/detail', ]" class="editButton">SAVE</a>
+          <a [routerLink]="['/detail', currentTask.Id]" class="editButton">SAVE</a>
 
         </form>
       </div>
