@@ -11,11 +11,11 @@
 
         <table>
             <div class="infoIcon">
-                
+
                 <span class="material-symbols-outlined">
                     help
                 </span>
-            
+
 
             </div>
             <div class="grid-container">
@@ -34,8 +34,9 @@
             </div>
 
 
-            <tr *ngFor="let tasks of var1 | filter:searchText | paginate: { itemsPerPage: count, currentPage: p}" (ngSubmit)="onSubmit()">
-            
+            <tr *ngFor="let tasks of var1 | filter:searchText | paginate: { itemsPerPage: count, currentPage: p}"
+                (ngSubmit)="onSubmit()">
+
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
                     <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
@@ -47,7 +48,7 @@
                                 </span></a><span ng-show="description.length"></span></i></span>
                 </td>
             </tr>
-            
+
 
         </table>
         <div class="text-right">
