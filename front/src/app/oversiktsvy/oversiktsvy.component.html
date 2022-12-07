@@ -44,7 +44,7 @@
                     <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
                     <span><b>Task due: </b> {{ tasks.due }}</span> <br>
                     <span> <b>Description:</b><i> {{ tasks.description | slice:0:150 }} ... <a
-                                [routerLink]="['/detail', 3]" class="underline">view task<span
+                                [routerLink]="['/detail', tasks.id]" class="underline">view task<span
                                     class="material-symbols-outlined">
                                     expand_more
                                 </span></a><span ng-show="description.length"></span></i></span>
