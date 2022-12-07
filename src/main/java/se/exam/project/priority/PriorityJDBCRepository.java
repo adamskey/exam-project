@@ -19,6 +19,7 @@ public class PriorityJDBCRepository {
 
     public List<Priority> findAll() {
         List<Priority> priorities = new ArrayList<>();
+        //test
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM Priority")) {
             ResultSet resultSet = statement.executeQuery();

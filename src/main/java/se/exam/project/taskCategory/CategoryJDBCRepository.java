@@ -21,7 +21,7 @@ public class CategoryJDBCRepository {
 
     public List<TaskCategory> findAll(){
         List<TaskCategory> taskCategories = new ArrayList<>();
-
+//test
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM TaskCategory")) {
             ResultSet resultSet = statement.executeQuery();

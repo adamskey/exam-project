@@ -21,5 +21,6 @@ public class TaskCategoryController {
     @GetMapping("/all")
     public List<TaskCategory> getTaskCategory() {
         return (List<TaskCategory>) categoryJDBCRepository.findAll();
+        //test
     }
 }
