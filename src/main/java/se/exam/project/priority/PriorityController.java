@@ -10,16 +10,19 @@ import se.exam.project.taskCategory.TaskCategory;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/priority")
 public class PriorityController {
 
     @Autowired
     PriorityRepository prioRepository;
 
+    @Autowired
+    PriorityJDBCRepository priorityJDBCRepository;
+
     @GetMapping("/all")
     public List<Priority> getPriorityList(){
-        return (List<Priority>) prioRepository.findAll();
+        return priorityJDBCRepository.findAll();
     }
 
 }
