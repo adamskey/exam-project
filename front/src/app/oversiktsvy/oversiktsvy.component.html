@@ -14,11 +14,9 @@
    
             <div class="infoIcon">
 
-                <span class="material-symbols-outlined" title="Click headers for sorting">
+                <span class="material-symbols-outlined">
                     help
                 </span>
-
-
             </div>
             <div class="grid-container">
                 <td><b>Id <span class="material-symbols-outlined">
@@ -40,6 +38,7 @@
                 (ngSubmit)="onSubmit()">
 
                 <td>
+                    
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
                     <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
                     <span><b>Task due: </b> {{ tasks.due }}</span> <br>

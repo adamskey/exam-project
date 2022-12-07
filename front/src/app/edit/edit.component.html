@@ -24,7 +24,8 @@
             <div class="form-floating small">
               <label for="dropdown" id="dropdown" class="category">Category</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
-                <option disabled selected value>Choose category: </option>
+                <option selected>{{currentTask.categoryType}} </option>
+                
                 <option *ngFor="let cat of var1">{{ cat.categoryType}}</option>
 
               </select>
@@ -36,7 +37,8 @@
             <div class="form-floating small">
               <label for="dropdown" id="dropdown2" class="category">Priority</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
-                <option *ngFor="let prio of var2" selected>
+                <option selected>{{ currentTask.priorityName }}</option>
+                <option *ngFor="let prio of var2">
                   {{ prio.priorityName }}</option>
 
               </select>
@@ -48,7 +50,7 @@
 
 
           <div class="form-floating">
-            <label for="title" id="title"> <input type="text" placeholder="{{ currentTask.title }}"></label>
+            <label for="title" id="title"> <input type="text" value="{{ currentTask.title }}"></label>
           </div>
 
           <div class="form-floating">
@@ -57,23 +59,23 @@
 
             <label for="description" id="description"></label>
             <textarea id="description" formControlName="description"
-              class="form-control" placeholder="{{ currentTask.description }}">{{ currentTask.description }}</textarea>
+              class="form-control" [(ngModel)]="currentTask.description"></textarea>
             
           </div>
 
           <div class="two-small">
             <div class="form-floating small">
               <label for="enddate" id="enddate">End date</label>
-              SLUT DATUM
-              <div ng-show='currentTask'>{{ currentTask.due }}
+              <input type="date" id="enddate" formControlName="enddate" class="form-control" required>
+              <div ng-show='currentTask'><i>{{ currentTask.due }}</i>
               </div>
             </div>
 
             <div class="two-small">
               <div class="form-floating small">
                 <label for="creationdate" id="creationdate">Creation Date</label>
-                DATUM SKAPAT
-                <div ng-show='currentTask'>{{ currentTask.createdTimestamp }}
+              
+                <div ng-show='currentTask'><i>{{ currentTask.createdTimestamp }}</i>
                 </div>
               </div>
             </div>
@@ -81,8 +83,7 @@
             <div class="two-small2">
               <div class="form-floating small">
                 <label for="edited" id="edited">Edited Date</label>
-                DATUM ÄNDRAT
-                <div ng-show='currentTask'> {{ currentTask.edited }}
+                <div ng-show='currentTask'> <i>{{ currentTask.edited }}</i>
                 </div>
               </div>
             </div>
@@ -90,16 +91,15 @@
             <div class="two-small2">
               <div class="form-floating small">
                 <label for="completed" id="completed">Completed date</label>
-                DATUM FÄRDIGT
-                <div ng-show='currentTask'> {{ currentTask.completed }}
+                <div ng-show='currentTask'> <i>{{ currentTask.completed }}</i>
                 </div>
               </div>
             </div>
 
             <div class="form-floating small">
               <label for="assignto" id="assignto">Assigned to</label>
-              P901XXX
-              <div ng-show='currentTask'>{{ currentTask.username }}
+              
+              <div ng-show='currentTask'><i>{{ currentTask.username }}</i>
               </div>
             </div>
           </div>
