@@ -9,7 +9,7 @@
           <input type="hidden" name="id" id="id" formControlName="id">
 
           <div class="form-floating">
-            <legend>Task</legend>
+            <legend>Task {{ currentTask.id }}</legend>
           </div>
 
           <a href="/overview"><i class="margin-left fa fa-close" style="font-size:36px"></i></a>
@@ -18,8 +18,6 @@
 
             <label for="taskid" id="taskid"></label>
             <p></p>
-            <div ng-show='currentTask'>Tasknumber: {{ currentTask.id }}
-            </div>
           </div>
 
           <div class="two-small">
