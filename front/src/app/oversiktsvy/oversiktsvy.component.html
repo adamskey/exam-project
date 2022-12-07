@@ -34,7 +34,7 @@
             </div>
 
 
-            <tr *ngFor="let tasks of var1 | filter:searchText" >
+            <tr *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
             <tr *ngFor="let tasks of var1 | paginate: { itemsPerPage: count, currentPage: p}">
                 <td>
                     <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
