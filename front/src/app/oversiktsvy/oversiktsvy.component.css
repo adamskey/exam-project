@@ -24,7 +24,7 @@ thead th {
 }
 
 tr:hover {
-  background-color: rgb(255, 210, 168);
+  background-color: rgba(239, 175, 126, 0.219);
   cursor: pointer;
 }
 
