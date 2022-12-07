@@ -24,10 +24,11 @@
             <div class="form-floating small">
               <label for="dropdown" id="dropdown" class="category">Category</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
-                <option> KATEGORI</option>
+                <option disabled selected value>Choose category: </option>
+                <option *ngFor="let cat of var1">{{ cat.categoryType}}</option>
 
               </select>
-              <div ng-value='currentTask'>{{ currentTask.categoryType }}</div>
+           
             </div>
 
 
@@ -35,7 +36,8 @@
             <div class="form-floating small">
               <label for="dropdown" id="dropdown2" class="category">Priority</label>
               <select type="dropdown " class="form-control" formControlName="priority" required>
-                <option>PRIO OLIKA VAL</option>
+                <option *ngFor="let prio of var2" selected>
+                  {{ prio.priorityName }}</option>
 
               </select>
               <div ng-show='currentTask'>{{ currentTask.priorityName }}
@@ -46,20 +48,17 @@
 
 
           <div class="form-floating">
-            <label for="title" id="title"> <input type="text" placeholder="TITEL"></label>
-            <div ng-show='currentTask'>{{ currentTask.title }}
-            </div>
+            <label for="title" id="title"> <input type="text" placeholder="{{ currentTask.title }}"></label>
           </div>
 
           <div class="form-floating">
 
-            <div> {{ currentTask.description }}</div>
+            
 
             <label for="description" id="description"></label>
             <textarea id="description" formControlName="description"
-              class="form-control">BESKRVINING AV ÄRENDET{{ currentTask.description }}</textarea>
-            <div ng-show='currentTask'>{{ currentTask.description }}
-            </div>
+              class="form-control" placeholder="{{ currentTask.description }}">{{ currentTask.description }}</textarea>
+            
           </div>
 
           <div class="two-small">
