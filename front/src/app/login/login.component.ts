@@ -45,11 +45,14 @@ export class LoginComponent implements OnInit {
     if(!this.pidHasError && !this.passwordHasError) {
           this.http.post('http://localhost:8080/login', this.loginForm.value).subscribe((response) => {
           this.token = JSON.stringify(response)
-            localStorage.setItem('token', this.token)
+          localStorage.setItem('token', this.token)
+          if (response) {
+            this.route.navigate(['/overview'])
+          }
           })
         }
 
-    this.route.navigate(['/overview'])
+    
   }
   ngOnInit(): void {
 
