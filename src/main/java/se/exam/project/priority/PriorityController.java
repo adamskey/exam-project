@@ -24,5 +24,6 @@ public class PriorityController {
     public List<Priority> getPriorityList(){
         return priorityJDBCRepository.findAll();
     }
+    //test
 
 }
