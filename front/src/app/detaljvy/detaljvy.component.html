@@ -7,16 +7,16 @@
 
           <div class="form-floating">
 
-            <legend>Task</legend>
+            <legend>Task {{ currentTask.id }}</legend>
           </div>
 
             <a href="/overview" ><i class="margin-left fa fa-close" style="font-size:36px" ></i></a>
 
           <div class="form-floating">
-            <label for="taskid" id="taskid">Id</label>
+            <!--<label for="taskid" id="taskid">Id</label>
             <p></p>
-            <div ng-show='currentTask'>{{ currentTask.id }}
-            </div>
+            <div ng-show='currentTask'>Tasknumber: {{ currentTask.id }}
+            </div>-->
           </div>
 
           <div class="two-small">
@@ -37,15 +37,18 @@
 
 
           <div class="form-floating">
-            <label for="title" id="title">Title</label>
-            <div ng-show='currentTask'>{{ currentTask.title }}
-            </div>
+            <label for="title" id="title">{{ currentTask.title }} </label>
+           <!-- <div ng-show='currentTask'>{{ currentTask.title }}
+            </div>-->
           </div>
 
           <div class="form-floating">
-            <label for="description" id="description">Description</label>
-            <div ng-show='currentTask'>{{ currentTask.description }}
-            </div>
+            
+             <div> {{ currentTask.description }}</div>
+            <!--
+              <label for="description" id="description"></label>
+              <div ng-show='currentTask'>{{ currentTask.description }}
+            </div>-->
           </div>
 
           <div class="two-small">
