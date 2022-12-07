@@ -37,7 +37,7 @@ export class UnassignedComponent implements OnInit {
   }[]>;
 
   ngOnInit(): void {
-    this.taskListService.getTaskListByUserId().subscribe((response) => {
+    this.taskListService.getTaskListByTeamId().subscribe((response) => {
       this.var1 = response;
     })
     console.log(this.var1)
