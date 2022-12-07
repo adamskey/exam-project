@@ -43,7 +43,7 @@ label {
 .button-color {
   width: 100%;
   text-align: center;
-  background-color: #F57D3B;
+  background-color: greenyellow;
   cursor: pointer;
   margin-top: 15px;
   border: none;
@@ -94,10 +94,21 @@ label {
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
 }
+.two-small2 {
+display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
 p{
   font-size: small;
   margin-top: -15px;
   margin-bottom: -0.1px;
   font-style: italic;
 
+}
+.fa.fa-close{
+color: #F57D3B;
+float: right;
+margin-top: -50px;
 }
