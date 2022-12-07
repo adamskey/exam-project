@@ -1,4 +1,3 @@
-
 <body>
   <main class="form-signin">
     <div class="card">
@@ -7,34 +6,35 @@
 
           <div class="form-floating">
 
-            <legend>Task </legend>
+            <legend>Task</legend>
           </div>
 
           <div class="form-floating">
-            <label for="taskid" id="taskid">Id</label><p></p>
+            <label for="taskid" id="taskid">Id</label>
+            <p></p>
             <div ng-show='currentTask'>{{ currentTask.id }}
             </div>
           </div>
 
           <div class="two-small">
             <div class="form-floating small">
-             <label for="dropdown" id="dropdown" class="category">Category</label>
-              <div ng-value='currentTask'>{{ currentTask.taskCategory }} ></div>
-			</div>
+              <label for="dropdown" id="dropdown" class="category">Category</label>
+              <div ng-value='currentTask'>{{ currentTask.taskCategory }}</div>
+            </div>
 
 
 
             <div class="form-floating small">
-             <label for="dropdown" id="dropdown2" class="category">Priority</label>
+              <label for="dropdown" id="dropdown2" class="category">Priority</label>
               <div ng-show='currentTask'>{{ currentTask.priorityName }}
-                </div>
+              </div>
 
-          </div>
+            </div>
           </div>
 
 
           <div class="form-floating">
-            <label for="title" id="title">Title</label><p>(max 50 characters)</p>
+            <label for="title" id="title">Title</label>
             <div ng-show='currentTask'>{{ currentTask.title }}
             </div>
           </div>
@@ -58,20 +58,19 @@
                 <div ng-show='currentTask'>{{ currentTask.createdTimestamp }}
                 </div>
               </div>
-              </div>
+            </div>
 
             <div class="form-floating small">
-              <label for="assignto" id="assignto">Assign to</label>
+              <label for="assignto" id="assignto">Assigned to</label>
               <div ng-show='currentTask'>{{ currentTask.username }}
               </div>
             </div>
           </div>
 
-          <input type="submit" name="submit" id="submit" value="submit" class="button-color" />
+          <input type="submit" name="submit" id="submit" value="edit" class="button-color" />
 
         </form>
       </div>
     </div>
   </main>
 </body>
-
