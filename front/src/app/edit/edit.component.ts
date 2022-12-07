@@ -40,6 +40,10 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const taskIdFromRoute = Number(routeParams.get('taskId'))
+    this.http.get('http://localhost:8080/tasks/detail/' + taskIdFromRoute).subscribe((response) => {
+      console.log(response)
+      this.currentTask = response;
+    })
 
   }
   onSubmit(): void {

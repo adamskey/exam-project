@@ -13,14 +13,14 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./detaljvy.component.css']
 })
 @Injectable()
-export class DetaljvyComponent implements OnInit  {
+export class DetaljvyComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private app: AppComponent,
     private http: HttpClient
-  ) {}
+  ) { }
 
 
   currentTask: any;
