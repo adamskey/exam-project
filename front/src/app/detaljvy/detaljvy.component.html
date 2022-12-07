@@ -37,6 +37,7 @@
 
 
           <div class="form-floating">
+            
             <label for="title" id="title">{{ currentTask.title }} </label>
            <!-- <div ng-show='currentTask'>{{ currentTask.title }}
             </div>-->
@@ -69,6 +70,7 @@
             <div class="two-small2">
               <div class="form-floating small">
                 <label for="edited" id="edited">Edited Date</label>
+                
                 <div ng-show='currentTask'> {{ currentTask.edited }}
                 </div>
               </div>
@@ -90,7 +92,7 @@
           </div>
   
 
-          <button href="/overview" type="edit" name="edit" id="edit" value="Edit" class="button-edit"><b>Edit</b></button>
+          <a href="/edit" type="edit" name="edit" id="edit" value="Edit" class="button-edit"><b>Edit</b></a>
           <button href="/overview" type="complete" name="complete" id="complete" value="Complete" class="button-color"><b>Complete</b></button>
 
         </form>

@@ -1,1 +1,117 @@
-<p>edit works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+  <main class="form-signin">
+    <div class="card">
+      <div class="card-body">
+        <form name="newticketForm" [formGroup]="newticketForm" (ngSubmit)="onSubmit()">
+
+          <input type="hidden" name="id" id="id" formControlName="id">
+
+          <div class="form-floating">
+
+            <legend>Task</legend>
+          </div>
+
+          <a href="/overview"><i class="margin-left fa fa-close" style="font-size:36px"></i></a>
+
+          <div class="form-floating">
+           
+            <label for="taskid" id="taskid"></label>
+            <p></p>
+            <div ng-show='currentTask'>Tasknumber: {{ currentTask.id }}
+            </div>
+          </div>
+
+          <div class="two-small">
+            <div class="form-floating small">
+              <label for="dropdown" id="dropdown" class="category">Category</label>
+              <select type="dropdown " class="form-control" formControlName="priority" required>
+                <option> KATEGORI</option>
+  
+              </select>
+              <div ng-value='currentTask'>{{ currentTask.categoryType }}</div>
+            </div>
+
+
+
+            <div class="form-floating small">
+              <label for="dropdown" id="dropdown2" class="category">Priority</label>
+              <select type="dropdown " class="form-control" formControlName="priority" required>
+                <option>PRIO OLIKA VAL</option>
+  
+              </select>
+              <div ng-show='currentTask'>{{ currentTask.priorityName }}
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-floating">
+            <label for="title" id="title"> <input type="text" placeholder="TITEL"></label>
+            <div ng-show='currentTask'>{{ currentTask.title }}
+            </div>
+          </div>
+
+          <div class="form-floating">
+
+            <div> {{ currentTask.description }}</div>
+
+            <label for="description" id="description"></label>
+            <textarea id="description" formControlName="description" class="form-control">BESKRVINING AV ÄRENDET</textarea>
+            <div ng-show='currentTask'>{{ currentTask.description }}
+            </div>
+          </div>
+
+          <div class="two-small">
+            <div class="form-floating small">
+              <label for="enddate" id="enddate">End date</label>
+              SLUT DATUM
+              <div ng-show='currentTask'>{{ currentTask.due }}
+              </div>
+            </div>
+
+            <div class="two-small">
+              <div class="form-floating small">
+                <label for="creationdate" id="creationdate">Creation Date</label>
+                DATUM SKAPAT
+                <div ng-show='currentTask'>{{ currentTask.createdTimestamp }}
+                </div>
+              </div>
+            </div>
+
+            <div class="two-small2">
+              <div class="form-floating small">
+                <label for="edited" id="edited">Edited Date</label>
+                DATUM ÄNDRAT
+                <div ng-show='currentTask'> {{ currentTask.edited }}
+                </div>
+              </div>
+            </div>
+
+            <div class="two-small2">
+              <div class="form-floating small">
+                <label for="completed" id="completed">Completed date</label>
+                DATUM FÄRDIGT
+                <div ng-show='currentTask'> {{ currentTask.completed }}
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating small">
+              <label for="assignto" id="assignto">Assigned to</label>
+              P901XXX
+              <div ng-show='currentTask'>{{ currentTask.username }}
+              </div>
+            </div>
+          </div>
+
+
+          <a [routerLink]="['/detail', 1]" class="editButton">Edit</a>
+
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
