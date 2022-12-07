@@ -7,44 +7,48 @@
 
           <div class="form-floating">
 
-            <legend>Task </legend>
+            <legend>Task {{ currentTask.id }}</legend>
           </div>
 
             <a href="/overview" ><i class="margin-left fa fa-close" style="font-size:36px" ></i></a>
 
           <div class="form-floating">
-            <label for="taskid" id="taskid">Id</label><p></p>
-            <div ng-show='currentTask'>{{ currentTask.id }}
-            </div>
+            <!--<label for="taskid" id="taskid">Id</label>
+            <p></p>
+            <div ng-show='currentTask'>Tasknumber: {{ currentTask.id }}
+            </div>-->
           </div>
 
           <div class="two-small">
             <div class="form-floating small">
              <label for="dropdown" id="dropdown" class="category">Category</label>
-              <div ng-show='currentTask'>{{ currentTask.categoryType }}</div>
+              <div ng-value='currentTask'>{{ currentTask.categoryType }}</div>
 			</div>
 
 
 
             <div class="form-floating small">
-             <label for="dropdown" id="dropdown2" class="category">Priority</label>
+              <label for="dropdown" id="dropdown2" class="category">Priority</label>
               <div ng-show='currentTask'>{{ currentTask.priorityName }}
-                </div>
+              </div>
 
-          </div>
+            </div>
           </div>
 
 
           <div class="form-floating">
-            <label for="title" id="title">Title</label><p>(max 50 characters)</p>
-            <div ng-show='currentTask'>{{ currentTask.title }}
-            </div>
+            <label for="title" id="title">{{ currentTask.title }} </label>
+           <!-- <div ng-show='currentTask'>{{ currentTask.title }}
+            </div>-->
           </div>
 
           <div class="form-floating">
-            <label for="description" id="description">Description</label>
-            <div ng-show='currentTask'>{{ currentTask.description }}
-            </div>
+            
+             <div> {{ currentTask.description }}</div>
+            <!--
+              <label for="description" id="description"></label>
+              <div ng-show='currentTask'>{{ currentTask.description }}
+            </div>-->
           </div>
 
           <div class="two-small">
@@ -60,7 +64,7 @@
                 <div ng-show='currentTask'>{{ currentTask.createdTimestamp }}
                 </div>
               </div>
-              </div>
+            </div>
 
             <div class="two-small2">
               <div class="form-floating small">
@@ -79,17 +83,17 @@
             </div>
 
             <div class="form-floating small">
-              <label for="assignto" id="assignto">Assign to</label>
+              <label for="assignto" id="assignto">Assigned to</label>
               <div ng-show='currentTask'>{{ currentTask.username }}
               </div>
             </div>
           </div>
 
-          <input href="/overview" type="complete" name="complete" id="complete" value="complete" class="button-color" />
+          <input href="/overview" type="complete" name="complete" id="complete" value="Complete" class="button-color" />
+          <input href="/overview" type="edit" name="edit" id="edit" value="Edit" class="button-edit" />
 
         </form>
       </div>
     </div>
   </main>
 </body>
-

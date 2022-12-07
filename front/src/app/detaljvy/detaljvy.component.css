@@ -112,3 +112,14 @@ color: #F57D3B;
 float: right;
 margin-top: -50px;
 }
+.button-edit {
+  width: 100%;
+  text-align: center;
+  background-color: #F57D3B;
+  cursor: pointer;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
