@@ -40,7 +40,6 @@ export class OversiktsvyComponent implements OnInit {
     this.taskListService.getTaskListByUserId().subscribe((response) => {
       this.var1 = response;
     })
-    console.log(this.var1)
   }
   onSubmit(): void {
     if (this.ChosenId != this.var1) {

@@ -39,15 +39,13 @@ public class TaskController {
     public List<Tasks> overview() {
         return (List<Tasks>) taskRepository.findAll();
     }
-    @GetMapping("/overview2")
-    public List<DisplayTask> overview2() {
-        int id = 1;
+    @PostMapping("/overview2")
+    public List<DisplayTask> overview2(@RequestBody Integer id) {
         return taskJDBCRepository.getTasksByUserId(id);
     }
 
-    @GetMapping("/overviewbyteam")
-    public List<DisplayTask> overviewByTeam() {
-        int id = 1;
+    @PostMapping("/overviewbyteam")
+    public List<DisplayTask> overviewByTeam(@RequestBody Integer id) {
         return taskJDBCRepository.getTaskByTeamId(id);
     }
 
