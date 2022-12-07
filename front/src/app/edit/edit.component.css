@@ -99,6 +99,7 @@ p{
 color: #F57D3B;
 float: right;
 margin-top: -50px;
+margin-right: 11px;
 }
 
 
@@ -133,12 +134,13 @@ margin-top: -50px;
 .editButton{
     background-color: #F57D3B;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 35px;
+    text-align: center;
     border: none;
     border-radius: 5px;
     padding: 12px 20px;
-    margin-right: 100px;
     float: right;
+    width: 100%;
     
     }
 
