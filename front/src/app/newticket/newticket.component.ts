@@ -22,6 +22,7 @@ export class NewticketComponent implements OnInit {
   assigntoIsEmpty: boolean = false;
 
 newticketForm = this.formBuilder.group({
+    id: '',
     category: '',
     priority:'',
     title: '',

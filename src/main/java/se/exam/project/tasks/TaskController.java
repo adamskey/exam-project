@@ -3,7 +3,12 @@ package se.exam.project.tasks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.config.Task;
 import org.springframework.web.bind.annotation.*;
+import se.exam.project.priority.Priority;
+import se.exam.project.priority.PriorityRepository;
+import se.exam.project.taskCategory.TaskCategory;
+import se.exam.project.taskCategory.TaskCategoryRepository;
 import se.exam.project.user.User;
+import se.exam.project.user.UserRepository;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -20,6 +25,15 @@ public class TaskController {
 
     @Autowired
     TaskJDBCRepository taskJDBCRepository;
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    PriorityRepository priorityRepository;
+
+    @Autowired
+    TaskCategoryRepository taskCategoryRepository;
 
     @GetMapping("/overview")
     public List<Tasks> overview() {
@@ -43,22 +57,43 @@ public class TaskController {
 //    }
 
     @PostMapping("/newtask")
-    public void newTask(@RequestBody NewTask task) {
+    public Tasks newTask(@RequestBody NewTask task) {
         Tasks saveTask = new Tasks();
+
+        if (task.getId().equals("")) {
+            saveTask.setId(null);
+        }
+
+        List<TaskCategory> categories = taskCategoryRepository.findByCategoryType(task.getCategory());
+
+        if (categories.size() > 0) {
+            saveTask.setTaskCategory(categories.get(0));
+            saveTask.getTaskCategory().setTeamTask(null);
+            saveTask.getTaskCategory().setTaskList(null);
+        }
+
+        List<Priority> priorities = priorityRepository.findByPriorityName(task.getPriority());
+
+        if (priorities.size() > 0) {
+            saveTask.setPriorityId(priorities.get(0));
+            saveTask.getPriorityId().setTaskList(null);
+        }
+
+        saveTask.setTitle(task.getTitle());
+
+        saveTask.setDescription(task.getDescription());
 
         saveTask.setDue(Date.valueOf(task.getEnddate()));
 
-
-       // saveTask.setTaskCategory();
-
         saveTask.setCreatedTimestamp(new Date(System.currentTimeMillis()));
-        taskRepository.save(saveTask);
-    }
-    @PostMapping("/updatetask")
-    public Tasks updateTask(@RequestBody Tasks task){
-        task.setEdited(new Date(System.currentTimeMillis()));
-        taskRepository.save(task);
-        return taskRepository.findFirstByOrderByIdDesc();
+
+        Optional<User> user = userRepository.findByUsername(task.getAssignto());
+
+        user.ifPresent(saveTask::setAssignedTo);
+
+        taskJDBCRepository.saveOrUpdate(saveTask);
+
+        return saveTask;
     }
 
     @GetMapping("/detail/{id}")
