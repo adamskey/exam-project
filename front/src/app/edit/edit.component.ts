@@ -33,9 +33,18 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private app: AppComponent,
+    private categoryService: CategoryService,
+    private priorityService: PriorityService,
   ){}
-
+  categoryList!: Observable<{
+    taskCategory:string
+  }[]>;
+  priorityList!:Observable<{
+  priority:string
+  }[]>;
   currentTask:any
+  var1:any
+  var2:any
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -43,6 +52,14 @@ export class EditComponent implements OnInit {
     this.http.get('http://localhost:8080/tasks/detail/' + taskIdFromRoute).subscribe((response) => {
       console.log(response)
       this.currentTask = response;
+    })
+
+    this.priorityService.getPriorityList().subscribe((response)=>{
+      this.var2 = response;
+    })
+    
+    this.categoryService.getCategoryList().subscribe((response)=>{
+      this.var1 = response;
     })
 
   }
