@@ -1,0 +1,54 @@
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<div class="container">
+  <div class="searchTextContainer">
+        <span class="material-symbols-outlined">
+            search
+        </span>
+    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+  </div>
+  <div class="card">
+
+    <table>
+      <div class="infoIcon">
+                <span class="material-symbols-outlined">
+                    help
+                </span>
+
+      </div>
+      <div class="grid-container">
+        <td><b>Id <span class="material-symbols-outlined">
+                            format_list_numbered
+                        </span></b></td>
+        <td><b>Title</b><span class="material-symbols-outlined">
+                        sort_by_alpha
+                    </span></td>
+        <td><b>Description<span class="material-symbols-outlined">
+                            sort_by_alpha
+                        </span></b></td>
+        <td><b>Creation date</b></td>
+        <td><b>End date</b></td>
+
+      </div>
+
+
+      <tr *ngFor="let tasks of var1 | filter:searchText" (ngSubmit)="onSubmit()">
+      <tr *ngFor="let tasks of var1 | paginate: { itemsPerPage: count, currentPage: p}">
+        <td>
+          <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
+          <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
+          <span><b>Task due: </b> {{ tasks.due }}</span> <br>
+          <span> <b>Description:</b><i> {{ tasks.description | slice:0:150 }}...<a [routerLink]="['/detail', tasks.id]"
+                                                                                   class="underline">view ticket<span class="material-symbols-outlined">
+                                    expand_more
+                                </span></a><span ng-show="description.length"></span></i></span>
+        </td>
+      </tr>
+
+    </table>
+    <div class="text-right">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+
+</div>
