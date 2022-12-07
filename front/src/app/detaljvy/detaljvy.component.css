@@ -99,35 +99,41 @@ p{
 color: #F57D3B;
 float: right;
 margin-top: -50px;
+margin-right: 11px;
 }
 
 
 
 .button-edit {
-  width: 48%;
+  float: left;
+  width: 20%;
   text-align: center;
   background-color: #F57D3B;
   cursor: pointer;
   margin-top: 25px;
-  border: none;
+  border: #F57D3B;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 14px 10px;
   box-shadow: 2px 2px 2px gray;
+  margin-left: 20px;
 
 }
 
 
 .button-color {
-  float: right;
-  width: 48%;
+  width: 60%;
   text-align: center;
   background-color:   rgb(126, 235, 107);
   cursor: pointer;
   margin-top: 25px;
   border: none;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 14px 10px;
   box-shadow: 2px 2px 2px gray;
+  margin-left: 40px;
+}
 
+a{
+  color: black;
 }
 
