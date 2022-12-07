@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
   <main class="form-signin">
     <div class="card">
@@ -10,6 +10,8 @@
             <legend>Task </legend>
           </div>
 
+            <a href="/overview" ><i class="margin-left fa fa-close" style="font-size:36px" ></i></a>
+
           <div class="form-floating">
             <label for="taskid" id="taskid">Id</label><p></p>
             <div ng-show='currentTask'>{{ currentTask.id }}
@@ -19,7 +21,7 @@
           <div class="two-small">
             <div class="form-floating small">
              <label for="dropdown" id="dropdown" class="category">Category</label>
-              <div ng-value='currentTask'>{{ currentTask.taskCategory }} ></div>
+              <div ng-show='currentTask'>{{ currentTask.categoryType }}</div>
 			</div>
 
 
@@ -60,6 +62,22 @@
               </div>
               </div>
 
+            <div class="two-small2">
+              <div class="form-floating small">
+                <label for="edited" id="edited">Edited Date</label>
+                <div ng-show='currentTask'> {{ currentTask.edited }}
+                </div>
+              </div>
+            </div>
+
+            <div class="two-small2">
+              <div class="form-floating small">
+                <label for="completed" id="completed">Completed date</label>
+                <div ng-show='currentTask'> {{ currentTask.completed }}
+                </div>
+              </div>
+            </div>
+
             <div class="form-floating small">
               <label for="assignto" id="assignto">Assign to</label>
               <div ng-show='currentTask'>{{ currentTask.username }}
@@ -67,7 +85,7 @@
             </div>
           </div>
 
-          <input type="submit" name="submit" id="submit" value="submit" class="button-color" />
+          <input href="/overview" type="complete" name="complete" id="complete" value="complete" class="button-color" />
 
         </form>
       </div>
