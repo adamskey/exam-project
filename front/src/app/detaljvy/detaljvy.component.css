@@ -121,16 +121,16 @@ margin-right: 11px;
 
 
 .button-color {
-  width: 60%;
+  width: 55%;
   text-align: center;
-  background-color:   rgb(126, 235, 107);
+  background-color:   rgb(129, 194, 117);
   cursor: pointer;
   margin-top: 25px;
   border: none;
   border-radius: 5px;
   padding: 14px 10px;
   box-shadow: 2px 2px 2px gray;
-  margin-left: 40px;
+  margin-left: 55px;
 }
 
 a{
