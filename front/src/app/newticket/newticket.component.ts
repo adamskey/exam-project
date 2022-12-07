@@ -70,7 +70,7 @@ priority:string
     } else {
     this.enddateIsEmpty = false;
     }
-   if(!this.categoryIsEmpty || this.titleIsEmpty || this.descriptionIsEmpty || this.enddateIsEmpty ){
+   if(!this.categoryIsEmpty || !this.titleIsEmpty || !this.descriptionIsEmpty || !this.enddateIsEmpty ){
     this.saveTask();
    }
 

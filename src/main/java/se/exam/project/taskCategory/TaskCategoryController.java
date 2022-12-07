@@ -15,9 +15,11 @@ public class TaskCategoryController {
 
     @Autowired
     TaskCategoryRepository taskCategoryRepository;
+    @Autowired
+    CategoryJDBCRepository categoryJDBCRepository;
 
     @GetMapping("/all")
     public List<TaskCategory> getTaskCategory() {
-        return (List<TaskCategory>) taskCategoryRepository.findAll();
+        return (List<TaskCategory>) categoryJDBCRepository.findAll();
     }
 }

@@ -55,6 +55,7 @@ public class Priority {
         return "Priority{" +
                 "id=" + id +
                 ", priorityName='" + priorityName + '\'' +
+                ", taskList=" + taskList +
                 '}';
     }
 }
