@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
+import { AppComponent } from '../app.component';
+
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

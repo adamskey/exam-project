@@ -5,41 +5,57 @@
         <span class="material-symbols-outlined">
             search
         </span>
-        <form [formGroup]="searchForm">
-            <input type="text" formControlName="search" class="searchText" id="search"
-                placeholder="Search" name="listSearch">
-        </form>
-
-
+        <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
     </div>
     <div class="card">
-       <li *ngFor="let tasks of var1 | search: searchForm.value.search">
-        {{tasks}}
-       </li>
+
         <table>
+
+   
             <div class="infoIcon">
+
                 <span class="material-symbols-outlined">
                     help
                 </span>
 
+
             </div>
             <div class="grid-container">
-                <td><b>Id</b></td>
-                <td><b>Title</b></td>
-                <td><b>Description</b></td>
+                <td><b>Id <span class="material-symbols-outlined">
+                            format_list_numbered
+                        </span></b></td>
+                <td><b>Title</b><span class="material-symbols-outlined">
+                        sort_by_alpha
+                    </span></td>
+                <td><b>Description<span class="material-symbols-outlined">
+                            sort_by_alpha
+                        </span></b></td>
                 <td><b>Creation date</b></td>
                 <td><b>End date</b></td>
 
             </div>
 
 
-            <tr *ngFor="let tasks of var1">
+            <tr *ngFor="let tasks of var1 | filter:searchText | paginate: { itemsPerPage: count, currentPage: p}"
+                (ngSubmit)="onSubmit()">
+
                 <td>
-                    <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<i>Title: {{ tasks.title | slice:0:50 }}</i></span><br>
-                    <span><i> <b>description:</b> {{ tasks.description | slice:0:150 }}...<span
-                                ng-show="description.length"></span></i></span>
+                    <span><b>{{ tasks.id }}</b>&nbsp;&nbsp;<br><b> Title: </b>{{ tasks.title | slice:0:50 }}</span><br>
+                    <span><b>Task created: </b> {{ tasks.createdTimestamp }}</span> <br>
+                    <span><b>Task due: </b> {{ tasks.due }}</span> <br>
+                    <span> <b>Description:</b><i> {{ tasks.description | slice:0:150 }} ... <a
+                                [routerLink]="['/detail', 3]" class="underline">view task<span
+                                    class="material-symbols-outlined">
+                                    expand_more
+                                </span></a><span ng-show="description.length"></span></i></span>
                 </td>
             </tr>
+
+
         </table>
+        <div class="text-right">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
     </div>
+
 </div>

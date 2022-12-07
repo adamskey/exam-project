@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { isEmpty } from '../string-utilities';
@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
     username: '',
     password: ''
   });
+
+
 
   constructor(
     private formBuilder: FormBuilder,
