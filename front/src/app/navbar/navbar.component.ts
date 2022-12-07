@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,12 +10,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private route: Router) {}
 
    postSignout() {
-    let user = 'hej'; 
-    this.http.post('http://localhost:8080/api/auth/signout', user)
-    window.location.href
+    localStorage.clear();
+    this.route.navigate(['/login'])
    }
 
 }
