@@ -72,6 +72,9 @@ priority:string
     }
    if(!this.categoryIsEmpty || !this.titleIsEmpty || !this.descriptionIsEmpty || !this.enddateIsEmpty ){
     this.saveTask();
+    this.router.navigate(["/overview"])
+    
+    
    }
 
   }
@@ -91,6 +94,7 @@ priority:string
     this.http.post('http://localhost:8080/tasks/newtask', this.newticketForm.value).subscribe((response) =>{
       console.log(response)
     })
+  
     
   }
 }
