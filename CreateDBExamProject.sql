@@ -19,12 +19,16 @@ CREATE TABLE [User] (
 ID int IDENTITY(1, 1) PRIMARY KEY,
 Username varchar(255),
 [Password] varchar(255),
-[Role] int FOREIGN KEY REFERENCES Roles(ID),
 CreatedDate date,
 Email varchar(255),
 PhoneNumber varchar(255),
 ReportsTo int FOREIGN KEY REFERENCES [User](ID),
 TeamId int FOREIGN KEY REFERENCES Team(ID)
+)
+
+CREATE TABLE UserRoles(
+UserID int FOREIGN KEY REFERENCES [User](ID),
+RoleID int FOREIGN KEY REFERENCES Roles(ID)
 )
 
 CREATE TABLE TaskCategory(
@@ -57,11 +61,11 @@ TeamId int FOREIGN KEY REFERENCES Team(ID)
 
 
 INSERT INTO Roles ([Name])
-VALUES ('User')
+VALUES ('ROLE_USER')
 INSERT INTO Roles ([Name])
-VALUES ('Manager')
+VALUES ('ROLE_MODERATOR')
 INSERT INTO Roles ([Name])
-VALUES ('Admin')
+VALUES ('ROLE_ADMIN')
 
 INSERT INTO Team ([Name])
 VALUES ('Låneadmin')
@@ -101,16 +105,35 @@ VALUES (3, 3)
 INSERT INTO TaskCategoryTeam (TaskCategoryId, TeamId)
 VALUES (4, 2)
 
-INSERT INTO [User] (Username, [Password], [Role], CreatedDate, Email, PhoneNumber, TeamId)
-VALUES ('p901mjl', 'kajsborv', 2, '2022-11-28', 'p901mjl@swedbank.se', '070-6666666', 2)
-INSERT INTO [User] (Username, [Password], [Role], CreatedDate, Email, PhoneNumber, TeamId)
-VALUES ('p201ejh', 'snäll', 2, '2022-11-28', 'p201ejhl@swedbank.se', '070-7654321', 1)
-INSERT INTO [User] (Username, [Password], [Role], CreatedDate, Email, PhoneNumber, TeamId, ReportsTo)
-VALUES ('p901hpc', 'kokkaffe', 1, '2022-11-28', 'p901hpc@swedbank.se', '070-3333333', 2, 1)
-INSERT INTO [User] (Username, [Password], [Role], CreatedDate, Email, PhoneNumber, TeamId, ReportsTo)
-VALUES ('p901fxe', 'bandhåll', 1, '2022-11-28', 'p901fxe@swedbank.se', '070-1234567', 1, 2)
-INSERT INTO [User] (Username, [Password], [Role], CreatedDate, Email, PhoneNumber)
-VALUES ('p901ale', 'gejmboj', 3, '2022-11-28', 'p901ale@swedbank.se', '070-1337707')
+INSERT INTO [User] (Username, [Password], CreatedDate, Email, PhoneNumber, TeamId)
+VALUES ('p901mjl', 'kajsborv', '2022-11-28', 'p901mjl@swedbank.se', '070-6666666', 2)
+INSERT INTO [User] (Username, [Password], CreatedDate, Email, PhoneNumber, TeamId)
+VALUES ('p201ejh', 'snäll', '2022-11-28', 'p201ejhl@swedbank.se', '070-7654321', 1)
+INSERT INTO [User] (Username, [Password], CreatedDate, Email, PhoneNumber, TeamId, ReportsTo)
+VALUES ('p901hpc', 'kokkaffe', '2022-11-28', 'p901hpc@swedbank.se', '070-3333333', 2, 1)
+INSERT INTO [User] (Username, [Password], CreatedDate, Email, PhoneNumber, TeamId, ReportsTo)
+VALUES ('p901fxe', 'bandhåll', '2022-11-28', 'p901fxe@swedbank.se', '070-1234567', 1, 2)
+INSERT INTO [User] (Username, [Password], CreatedDate, Email, PhoneNumber)
+VALUES ('p901ale', 'gejmboj', '2022-11-28', 'p901ale@swedbank.se', '070-1337707')
+
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (1, 1)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (1, 2)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (2, 1)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (2, 2)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (3, 1)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (4, 1)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (5, 1)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (5, 2)
+INSERT INTO UserRoles (UserID, RoleId)
+VALUES (5, 3)
 
 
 insert into Tasks (TaskCategoryId, CreatedTimestamp, Due, Edited, Completed, Title, Description, AssignedTo, PriorityId) values (2, '2022-03-15', '2022-12-05', null, null, 'justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices', 'fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan', 4, 3);
