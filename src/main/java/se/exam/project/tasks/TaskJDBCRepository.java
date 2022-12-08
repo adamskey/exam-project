@@ -63,7 +63,7 @@ public class TaskJDBCRepository {
                                         "JOIN TaskCategory AS tc ON t.TaskCategoryId=tc.ID\n" +
                                         "JOIN TaskCategoryTeam ON t.TaskCategoryId=TaskCategoryTeam.TaskCategoryId\n" +
                                         "JOIN Team ON Team.ID=TaskCategoryTeam.TeamId\n" +
-                                        "JOIN [User] AS u ON t.AssignedTo=u.ID\n" +
+                                        "LEFT OUTER JOIN [User] AS u ON u.ID=t.AssignedTo\n" +
                                         "JOIN [Priority] AS p ON t.PriorityId=p.ID\n" +
                                         "WHERE t.ID = ?")) {
             statement.setInt(1, id);
