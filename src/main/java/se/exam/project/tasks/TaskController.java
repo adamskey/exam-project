@@ -98,4 +98,9 @@ public class TaskController {
     public DisplayTask viewTask(@PathVariable Integer id) {
         return taskJDBCRepository.getTaskById(id);
     }
+
+    @PostMapping("/delete")
+    public void deleteTask(@RequestBody Integer id) {
+        taskJDBCRepository.deleteTask(id);
+    }
 }

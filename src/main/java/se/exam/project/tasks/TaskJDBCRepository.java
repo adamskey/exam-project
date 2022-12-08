@@ -123,6 +123,15 @@ public class TaskJDBCRepository {
         }
     }
 
+    public void deleteTask(Integer id) {
+        try (Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM Tasks WHERE ID = ?")) {
+            statement.setInt(1, id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     private DisplayTask rsDisplayTask(ResultSet rs) throws SQLException {
