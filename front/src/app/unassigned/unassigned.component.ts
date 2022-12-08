@@ -25,7 +25,7 @@ export class UnassignedComponent implements OnInit {
     private taskListService: TaskListService,
     private app: AppComponent,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   var1: any;
   p: number= 1;

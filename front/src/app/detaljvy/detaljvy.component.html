@@ -37,14 +37,14 @@
 
 
           <div class="form-floating">
-            
+
             <label for="title" id="title">{{ currentTask.title }} </label>
            <!-- <div ng-show='currentTask'>{{ currentTask.title }}
             </div>-->
           </div>
 
           <div class="form-floating">
-            
+
              <div> {{ currentTask.description }}</div>
             <!--
               <label for="description" id="description"></label>
@@ -70,7 +70,7 @@
             <div class="two-small2">
               <div class="form-floating small">
                 <label for="edited" id="edited">Edited Date</label>
-                
+
                 <div ng-show='currentTask'> {{ currentTask.edited }}
                 </div>
               </div>
@@ -90,9 +90,10 @@
               </div>
             </div>
           </div>
-  
+
 
           <a [routerLink]="['/edit', currentTask.id]" type="edit" name="edit" id="edit" value="Edit" class="button-edit">Edit</a>
+          <button href="/overview" type="delete" name="delete" id="delete" value="Delete" class="button-color2">Delete</button>
           <button href="/overview" type="complete" name="complete" id="complete" value="Complete" class="button-color">Complete</button>
 
         </form>

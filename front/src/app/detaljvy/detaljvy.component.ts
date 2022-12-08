@@ -4,6 +4,7 @@ import { TaskListService } from '../tasklist.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { OversiktsvyComponent } from '../oversiktsvy/oversiktsvy.component';
+import { UnassignedComponent } from '../unassigned/unassigned.component';
 import { ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
 
