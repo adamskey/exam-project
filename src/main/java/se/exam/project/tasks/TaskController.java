@@ -103,4 +103,9 @@ public class TaskController {
     public void deleteTask(@RequestBody Integer id) {
         taskJDBCRepository.deleteTask(id);
     }
+
+    @PostMapping("/complete")
+    public void completeTask(@RequestBody Integer id) {
+        taskJDBCRepository.completeTask(id);
+    }
 }
