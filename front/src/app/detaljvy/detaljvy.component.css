@@ -106,7 +106,7 @@ margin-right: 11px;
 
 .button-edit {
   float: left;
-  width: 25%;
+  width: 20%;
   text-align: center;
   background-color: #F57D3B;
   cursor: pointer;
@@ -121,7 +121,7 @@ margin-right: 11px;
 
 
 .button-color {
-  width: 50%;
+  width: 30%;
   text-align: center;
   background-color:   rgb(129, 194, 117);
   cursor: pointer;
@@ -132,7 +132,18 @@ margin-right: 11px;
   box-shadow: 2px 2px 2px gray;
   margin-left: 35px;
 }
-
+.button-color2 {
+  width: 20%;
+  text-align: center;
+  background-color: red;
+  cursor: pointer;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 10px;
+  box-shadow: 2px 2px 2px gray;
+  margin-left: 35px;
+}
 a {
   color: black;
 }
