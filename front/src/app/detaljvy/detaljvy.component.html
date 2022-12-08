@@ -93,8 +93,8 @@
 
 
           <a [routerLink]="['/edit', currentTask.id]" type="edit" name="edit" id="edit" value="Edit" class="button-edit">Edit</a>
-          <button href="/overview" type="delete" name="delete" id="delete" value="Delete" class="button-color2">Delete</button>
-          <button href="/overview" type="complete" name="complete" id="complete" value="Complete" class="button-color">Complete</button>
+          <button type="delete" name="delete" id="delete" value="Delete" class="button-color2" (click)="deleteTask()">Delete</button>
+          <button type="complete" name="complete" id="complete" value="Complete" class="button-color" (click)="completeTask()">Complete</button>
 
         </form>
       </div>

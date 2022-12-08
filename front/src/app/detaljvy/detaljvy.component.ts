@@ -5,7 +5,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { Observable } from 'rxjs';
 import { OversiktsvyComponent } from '../oversiktsvy/oversiktsvy.component';
 import { UnassignedComponent } from '../unassigned/unassigned.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -20,7 +20,8 @@ export class DetaljvyComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private app: AppComponent,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
 
@@ -46,6 +47,7 @@ export class DetaljvyComponent implements OnInit {
     const taskIdFromRoute = Number(routeParams.get('taskId'))
 
     this.http.post('http://localhost:8080/tasks/delete', taskIdFromRoute).subscribe()
+    this.router.navigate(['overview'])
   }
 
   completeTask() {
@@ -54,5 +56,7 @@ export class DetaljvyComponent implements OnInit {
     const taskIdFromRoute = Number(routeParams.get('taskId'))
 
     this.http.post('http://localhost:8080/tasks/complete', taskIdFromRoute).subscribe()
+
+    window.location.reload()
   }
 }

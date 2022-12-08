@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,8 +136,8 @@ public class TaskJDBCRepository {
     public void completeTask(Integer id) {
         Date today = new Date(System.currentTimeMillis());
         try (Connection connection = dataSource.getConnection();
-        PreparedStatement statement = connection.prepareStatement("UPDATE Tasks" +
-                "SET Completed = ?" +
+        PreparedStatement statement = connection.prepareStatement("UPDATE Tasks " +
+                "SET Completed = ? " +
                 "WHERE ID = ?")) {
             statement.setDate(1, today);
             statement.setInt(2, id);
