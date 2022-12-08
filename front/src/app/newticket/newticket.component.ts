@@ -73,8 +73,6 @@ priority:string
    if(!this.categoryIsEmpty || !this.titleIsEmpty || !this.descriptionIsEmpty || !this.enddateIsEmpty ){
     this.saveTask();
     this.router.navigate(["/overview"])
-    
-    
    }
 
   }

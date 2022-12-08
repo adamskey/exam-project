@@ -78,19 +78,12 @@ public class TaskController {
         }
 
         saveTask.setTitle(task.getTitle());
-
         saveTask.setDescription(task.getDescription());
-
         saveTask.setDue(Date.valueOf(task.getEnddate()));
-
         saveTask.setCreatedTimestamp(new Date(System.currentTimeMillis()));
-
         Optional<User> user = userRepository.findByUsername(task.getAssignto());
-
         user.ifPresent(saveTask::setAssignedTo);
-
         taskJDBCRepository.saveOrUpdate(saveTask);
-
         return saveTask;
     }
 
