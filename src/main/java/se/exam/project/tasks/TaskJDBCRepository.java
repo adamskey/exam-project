@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,6 +128,21 @@ public class TaskJDBCRepository {
         try (Connection connection = dataSource.getConnection();
         PreparedStatement statement = connection.prepareStatement("DELETE FROM Tasks WHERE ID = ?")) {
             statement.setInt(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void completeTask(Integer id) {
+        Date today = new Date(System.currentTimeMillis());
+        try (Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement("UPDATE Tasks" +
+                "SET Completed = ?" +
+                "WHERE ID = ?")) {
+            statement.setDate(1, today);
+            statement.setInt(2, id);
+            statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
